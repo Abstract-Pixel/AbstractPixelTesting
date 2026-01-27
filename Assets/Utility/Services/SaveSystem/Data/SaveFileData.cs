@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AbstractPixel.Utility
 {
-    public class SaveData
+    public class SaveFileData
     {
     
     }

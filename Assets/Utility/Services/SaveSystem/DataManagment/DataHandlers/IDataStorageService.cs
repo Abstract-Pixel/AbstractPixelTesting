@@ -9,6 +9,8 @@ namespace AbstractPixel.Utility.Save
 
         string Load(string fullpath);
 
+        bool CreateDirectory(string _directoryPath);
+
         bool DeleteFile(string _filePath);
 
         bool DeleteDirectory(string _directoryPath);

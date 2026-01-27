@@ -7,6 +7,112 @@ namespace AbstractPixel.Utility
     public class FileDataStorageService : IDataStorageService
     {
         static readonly string temporaryFileExtension = $".{FileExtension.tmp.ToString().ToLower()}";
+
+        public string Load(string _fullpath)
+        {
+            if (string.IsNullOrEmpty(_fullpath))
+            {
+                Debug.LogError("FileDataStorageService: Load failed. File path is null or empty.");
+                return null;
+            }
+            try
+            {
+                if (!File.Exists(_fullpath))
+                {
+                    Debug.LogError($"FileDataStorageService: Load failed. File does not exist at path: {_fullpath}");
+                    return null;
+                }
+                string data = File.ReadAllText(_fullpath);
+                return data;
+            }
+            catch (IOException e)
+            {
+                Debug.LogError($"FileDataStorageService:[I/O Exception Error] Load failed. Exception: {e}");
+                return null;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"FileDataStorageService:[Unexpected Error] Load failed. Exception: {e}");
+                return null;
+            }
+        }
+
+        public bool Save(string _data, string _fullpath)
+        {
+            if (string.IsNullOrEmpty(_fullpath))
+            {
+                Debug.LogError("FileDataStorageService: Save failed. File path is null or empty.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(_data))
+            {
+                Debug.LogError("FileDataStorageService: Save failed. Serialized Data to save is null or empty.");
+                return false;
+            }
+
+            try
+            {
+                string directoryPath = Path.GetDirectoryName(_fullpath);
+                if (!CreateDirectory(directoryPath))
+                {
+                    Debug.LogWarning($"FileDataStorageService: [Save Warning] Directory does not exist at path: {directoryPath}. Creating directory.");
+                    Directory.CreateDirectory(directoryPath);
+                }
+                string tempFilePath = _fullpath + temporaryFileExtension;
+                if (!DeleteFile(tempFilePath))
+                {
+                    return false;
+                }
+                File.WriteAllText(tempFilePath, _data);
+
+                if (!DeleteFile(_fullpath))
+                {
+                    return false;
+                }
+                File.Move(tempFilePath, _fullpath);
+                return true;
+            }
+            catch (IOException e)
+            {
+                Debug.LogError($"FileDataStorageService:[I/O Exception Error] Save failed. Exception: {e}");
+                return false;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"FileDataStorageService:[Unexpected Error] Save failed. Exception: {e}");
+                return false;
+            }
+        }
+
+        public bool CreateDirectory(string _directoryPath)
+        {
+            if (string.IsNullOrEmpty(_directoryPath))
+            {
+                Debug.LogError("FileDataStorageService: CreateDirectory failed. Directory path is null or empty.");
+                return false;
+            }
+            try
+            {
+                if (Directory.Exists(_directoryPath))
+                {
+                    Debug.LogWarning($"FileDataStorageService: Unable To CreateDirectory warning. Directory already exists at path: {_directoryPath}");
+                    return true;
+                }
+                Directory.CreateDirectory(_directoryPath);
+                return true;
+            }
+            catch (IOException e)
+            {
+                Debug.LogError($"FileDataStorageService:[I/O Exception Error] CreateDirectory failed. Exception: {e}");
+                return false;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"FileDataStorageService:[Unexpected Error] CreateDirectory failed. Exception: {e}");
+                return false;
+            }
+        }
         public bool DeleteDirectory(string _directoryPath)
         {
             if (string.IsNullOrEmpty(_directoryPath))
@@ -64,85 +170,6 @@ namespace AbstractPixel.Utility
                 Debug.LogError($"FileDataStorageService:[Unexpected Error] DeleteFile failed. Exception: {e}");
                 return false;
             }
-        }
-
-        public string Load(string _fullpath)
-        {
-            if(string.IsNullOrEmpty(_fullpath))
-            {
-                Debug.LogError("FileDataStorageService: Load failed. File path is null or empty.");
-                return null;
-            }
-            try
-            {
-                if (!File.Exists(_fullpath))
-                {
-                    Debug.LogError($"FileDataStorageService: Load failed. File does not exist at path: {_fullpath}");
-                    return null;
-                }
-                string data = File.ReadAllText(_fullpath);
-                return data;
-            }
-            catch (IOException e)
-            {
-                Debug.LogError($"FileDataStorageService:[I/O Exception Error] Load failed. Exception: {e}");
-                return null;
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"FileDataStorageService:[Unexpected Error] Load failed. Exception: {e}");
-                return null;
-            }
-        }
-
-        public bool Save(string _data, string _fullpath)
-        {
-            if (string.IsNullOrEmpty(_fullpath))
-            {
-                Debug.LogError("FileDataStorageService: Save failed. File path is null or empty.");
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(_data))
-            {
-                Debug.LogError("FileDataStorageService: Save failed. Serialized Data to save is null or empty.");
-                return false;
-            }
-
-            try
-            {
-                string directoryPath = Path.GetDirectoryName(_fullpath);
-                if (!Directory.Exists(directoryPath))
-                {
-                    Debug.LogWarning($"FileDataStorageService: [Save Warning] Directory does not exist at path: {directoryPath}. Creating directory.");
-                    Directory.CreateDirectory(directoryPath);
-                }
-
-                string tempFilePath = _fullpath + temporaryFileExtension;
-                if (!DeleteFile(tempFilePath))
-                {
-                    return false;
-                }
-                File.WriteAllText(tempFilePath, _data);
-
-                if(!DeleteFile(_fullpath))
-                {
-                    return false;
-                }
-                File.Move(tempFilePath,_fullpath);
-                return true;
-            }
-            catch (IOException e)
-            {
-                Debug.LogError($"FileDataStorageService:[I/O Exception Error] Save failed. Exception: {e}");
-                return false;
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"FileDataStorageService:[Unexpected Error] Save failed. Exception: {e}");
-                return false;
-            }
-        }
-           
+        }         
     }
 }
