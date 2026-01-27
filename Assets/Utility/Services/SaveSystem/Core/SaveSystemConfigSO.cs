@@ -7,6 +7,9 @@ namespace AbstractPixel.Utility.Save
     public class SaveSystemConfigSO : ScriptableObject
     {
         [field: SerializeField] public bool useDebugPath { get; private set; } = false;
+        [field: SerializeField] public FileExtension PrimaryFileExtension { get; private set; } = FileExtension.json;
+        [field: SerializeField] public FileExtension BackupFileExtension { get; private set; } = FileExtension.bak;
+
         [SerializeField] List<SaveCatgeoryDefinition> categoryDefinitionList;
 
         Dictionary<SaveCategory, SaveCatgeoryDefinition> categoryDefinitionMap = new();
@@ -23,13 +26,18 @@ namespace AbstractPixel.Utility.Save
         public void Initialize()
         {
             categoryDefinitionMap = new Dictionary<SaveCategory, SaveCatgeoryDefinition>();
-            foreach (SaveCatgeoryDefinition definition in categoryDefinitionList)
+            foreach(SaveCatgeoryDefinition definition in categoryDefinitionList)
             {
                 if (!categoryDefinitionMap.ContainsKey(definition.Category))
                 {
                     categoryDefinitionMap.Add(definition.Category, definition);
                 }
+                else
+                {
+                    Debug.LogWarning($"[SaveSystemConfigSO] - Duplicate category definition found for category: {definition.Category}");
+                }
             }
+  
         }
 
         public SaveCatgeoryDefinition GetCategoryDefinition(SaveCategory category)

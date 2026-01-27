@@ -5,42 +5,111 @@ namespace AbstractPixel.Utility.Save
 {
     public static class SavePathGenerator
     {
+        // Constant Folder Names (Can be changed per project if needed)
+        public static readonly string RootSaveFolder = "SaveFiles";
+        public static readonly string DebugRootSaveFolder = "DebugSaveFiles";
+        public static readonly string GlobalSavesFolder = "Global";
+        public static readonly string GlobalBackupSavesFolder = "GlobalBackupsName";
+        public static readonly string GameSavesFolder = "GameSaves";
+        public static readonly string ProfileSavesRootFolder = "SaveProfiles";
+        public static readonly string GameProfileSavesFolder = "GameProfile";
+        public static readonly string GameProfileBackupSavesFolder = "ProfileBackups";
+        public static readonly string AutoSavesFolder = "AutoSaves";
+
+        // Constant Paths
+        public static string DebugPath { get; private set; }
+        public static string ShipPath { get; private set; }
+
+        // Config Properties To Be Initialized
         private static SaveSystemConfigSO saveConfig { get; set; }
-        private static string debugRoot => Path.Combine(Application.dataPath, "DebugSaveFiles");
-        private static string shipRoot => Path.Combine(Application.persistentDataPath, "SaveFiles");
-        private static string currentRoot { get; set; }
+        private static string currentPath { get; set; }
+        private static string primaryFileExtension { get; set; }
+        private static string backupFileExtension { get; set; }
+
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitializeConstantPaths()
+        {
+            DebugPath = Path.Combine(Application.dataPath, DebugRootSaveFolder);
+            ShipPath = Path.Combine(Application.persistentDataPath, RootSaveFolder);
+        }
 
         public static void Initialize(SaveSystemConfigSO config)
         {
             saveConfig = config;
-            currentRoot = saveConfig.useDebugPath ? debugRoot : shipRoot;
+            currentPath = saveConfig.useDebugPath ? DebugPath : ShipPath;
+            primaryFileExtension = $".{saveConfig.PrimaryFileExtension.ToString().ToLower()}";
+            backupFileExtension = $".{saveConfig.BackupFileExtension.ToString().ToLower()}";
         }
 
-        // 1. GLOBAL PATHS
-        public static string GetGlobalPath(string filename)
+        public static string GetPath(SaveCatgeoryDefinition _definition, string _profileId = default)
         {
-            // Returns: .../SaveFiles/Global/settings.json
-            return Path.Combine(shipRoot, "Global", filename);
+            return GenerateFullPath(_definition, false, _profileId);
+        }
+
+        public static string GetBackupPath(SaveCatgeoryDefinition _definition, string _profileId = default)
+        {
+            return GenerateFullPath(_definition, true, _profileId);
+        }
+        public static string GetAutoSavePath(string profileId)
+        {
+            // Returns: .../SaveFiles/GameSaves/AutoSave/GameProfile+id/
+            return Path.Combine(currentPath, GameSavesFolder, AutoSavesFolder, profileId);
+        }
+
+        #region Private Helper Methods
+        private static string GenerateFullPath(SaveCatgeoryDefinition _definition, bool _isBackUp, string _profileId = default)
+        {
+            string fileName = null;
+            string fileExtension = _isBackUp ? backupFileExtension : primaryFileExtension;
+            if (string.IsNullOrEmpty(_definition.CustomFileName))
+            {
+                fileName = _definition.Category.ToString() + fileExtension;
+            }
+            else
+            {
+                fileName = _definition.CustomFileName + fileExtension;
+            }
+
+            string directoryPath = null;
+            if (_definition.DirectoryScope == SaveScope.Global)
+            {
+                directoryPath = _isBackUp ? GetGlobalBackupPath() : GetGlobalPath();
+            }
+            else if (_definition.DirectoryScope == SaveScope.GameProfile)
+            {
+                directoryPath = _isBackUp ? GetProfileBackupPath(_profileId) : GetProfilePath(_profileId);
+            }
+            directoryPath = Path.Combine(directoryPath, fileName);
+            return directoryPath;
+        }
+
+
+        // 1. GLOBAL PATHS
+        private static string GetGlobalPath()
+        {
+            // Returns: .../SaveFiles/Global/
+            return Path.Combine(currentPath, GlobalSavesFolder);
+        }
+
+        private static string GetGlobalBackupPath()
+        {
+            // Returns: .../SaveFiles/Global/Backups/
+            return Path.Combine(currentPath, GlobalSavesFolder, GlobalBackupSavesFolder);
         }
 
         // 2. PROFILE PATHS
-        public static string GetProfileRoot(string profileId)
+        private static string GetProfilePath(string _profileId)
         {
-            // Returns: .../SaveFiles/GameSaves/Profiles/Warrior_Lv50/
-            return Path.Combine(shipRoot, "GameSaves", "Profiles", profileId);
+            // Returns: .../SaveFiles/GameSaves/Profiles/GameProfile+profileId/
+            return Path.Combine(currentPath, GameSavesFolder, ProfileSavesRootFolder, GameProfileSavesFolder + _profileId);
         }
 
-        public static string GetProfileBackupPath(string profileId)
+        private static string GetProfileBackupPath(string _profileId)
         {
-            // Returns: .../SaveFiles/GameSaves/Profiles/Warrior_Lv50/Backups/
-            return Path.Combine(GetProfileRoot(profileId), "Backups");
+            // Returns: .../SaveFiles/GameSaves/Profiles/GameProfile/Backups/
+            return Path.Combine(GetProfilePath(_profileId), GameProfileBackupSavesFolder);
         }
-
-        // 3. AUTOSAVE PATHS
-        public static string GetAutoSavePath(string profileId)
-        {
-            // Returns: .../SaveFiles/GameSaves/AutoSave/Warrior_Lv50/
-            return Path.Combine(shipRoot, "GameSaves", "AutoSave", profileId);
-        }
+        #endregion
     }
 }
