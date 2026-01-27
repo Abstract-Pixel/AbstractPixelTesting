@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef6100df71bb3f4fb3f307199f3c8db, type: 3}
+  m_Name: SaveSystemConfigSO
+  m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveSystemConfigSO
+  <useDebugPath>k__BackingField: 0
+  categoryDefinitionList:
+  - DisplayName: Input
+    Category: 1
+    DirectoryScope: 1
+    CustomFileName: 
+    encryptFile: 0
+  - DisplayName: Settings
+    Category: 2
+    DirectoryScope: 1
+    CustomFileName: 
+    encryptFile: 0
+  - DisplayName: Game
+    Category: 3
+    DirectoryScope: 2
+    CustomFileName: Profile
+    encryptFile: 0
