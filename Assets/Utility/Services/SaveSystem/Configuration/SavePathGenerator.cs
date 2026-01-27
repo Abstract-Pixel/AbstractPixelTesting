@@ -21,10 +21,10 @@ namespace AbstractPixel.Utility.Save
         public static string ShipPath { get; private set; }
 
         // Config Properties To Be Initialized
-        private static SaveSystemConfigSO saveConfig { get; set; }
-        private static string currentPath { get; set; }
-        private static string primaryFileExtension { get; set; }
-        private static string backupFileExtension { get; set; }
+        public static SaveSystemConfigSO saveConfig { get; set; }
+        public static string currentPath { get; set; }
+        public static string primaryFileExtension { get; set; }
+        public static string backupFileExtension { get; set; }
 
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]

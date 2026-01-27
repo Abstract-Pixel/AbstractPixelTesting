@@ -8,6 +8,7 @@ namespace AbstractPixel.Utility.Save
         json = 1,
         xml = 2,
         txt = 3,
-        bak =4
+        bak =4,
+        tmp = 5,
     }
 }
