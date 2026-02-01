@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f7127e9b420c458e6eaaccde6e377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::fakeo
-  position: {x: 12, y: 34, z: 45456}
+  position: {x: 0, y: 0, z: 0}
 --- !u!4 &840363636
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244b564cac8d804d8567f708d892ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::anotherFako
-  example: {x: 50, y: 6, z: 10}
+  example: {x: 0, y: 0, z: 0}
 --- !u!114 &840363638
 MonoBehaviour:
   m_ObjectHideFlags: 0

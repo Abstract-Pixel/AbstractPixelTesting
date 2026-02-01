@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace AbstractPixel.Utility.Save
@@ -32,100 +31,106 @@ namespace AbstractPixel.Utility.Save
             profileManager.SetCurrentActiveProfile(tempProfileID, profilePath);
         }
 
-        public void SaveDataOf(SaveCategory _category)
-        {
-
-        }
-
-        public void LoadDataOf(SaveCategory _category)
-        {
-
-        }
-
         public void SaveALL()
         {
-            string fileExtension = SavePathGenerator.PrimaryFileExtension;
-            string activeProfileId = profileManager.CurrentProfileID;
-
             foreach (SaveCategory category in SaveableObjectsRegistry.Keys)
             {
-                Dictionary<string, ISaveableBridge> BridgesDataMap = SaveableObjectsRegistry[category];
-                SaveCatgeoryDefinition categoryDefinition = saveConfig.GetCategoryDefinition(category);
+                SaveDataOf(category);
+            }
+        }
 
-                SaveFileData categorizedSaveFileData;
-                string fileName = SavePathGenerator.GetFileNameBasedOnCategoryDefinition(categoryDefinition);
-                string fullSavePath = SavePathGenerator.GetPath(categoryDefinition, activeProfileId);
+        public void SaveDataOf(SaveCategory _category)
+        {
+            if (!SaveableObjectsRegistry.TryGetValue(_category, out var bridgesDataMap))
+            {
+                // No objects registered for this category. Nothing to save.
+                return;
+            }
+            if (bridgesDataMap.Count == 0) return;
 
-                if (categoryDefinition.DirectoryScope == SaveScope.Global)
+            string activeProfileId = profileManager.CurrentProfileID;
+            SaveCatgeoryDefinition categoryDefinition = saveConfig.GetCategoryDefinition(_category);
+
+            string fileName = SavePathGenerator.GetFileNameBasedOnCategoryDefinition(categoryDefinition);
+            string fullSavePath = SavePathGenerator.GetPath(categoryDefinition, activeProfileId);
+
+            SaveFileData categorizedSaveFileData;
+            if (categoryDefinition.DirectoryScope == SaveScope.Global)
+            {
+                categorizedSaveFileData = new SaveFileData(fileName);
+            }
+            else
+            {
+                categorizedSaveFileData = new SaveFileData(fileName, activeProfileId);
+            }
+
+            bool hasData = false;
+            foreach (ISaveableBridge bridge in bridgesDataMap.Values)
+            {
+                if (bridge == null) continue;
+
+                object capturedData = bridge.CaptureState(_category);
+                if (capturedData != null)
                 {
-                    categorizedSaveFileData = new SaveFileData(fileName);
-                }
-                else
-                {
-                    categorizedSaveFileData = new SaveFileData(fileName, activeProfileId);
-                }
-
-                foreach (string key in BridgesDataMap.Keys)
-                {
-                    ISaveableBridge bridge = BridgesDataMap[key];
-                    if (bridge == null) continue;
-
-                    object capturedData = bridge.CaptureState(category);
-                    if (capturedData == null)
-                    {
-                        continue;
-                    }
                     categorizedSaveFileData.DataMap.Add(bridge.UniqueId, capturedData);
+                    hasData = true;
                 }
+            }
 
+            if (hasData)
+            {
                 if (serializer.TrySerialize(categorizedSaveFileData, out string json))
                 {
                     fileStorageService.SaveFile(json, fullSavePath);
-
                 }
             }
         }
 
         public void LoadALL()
         {
-            string profileId = profileManager.CurrentProfileID;
-            foreach (SaveCatgeoryDefinition defintion in saveConfig.GetAllCategoryDefintions())
+            // This ensures we try to load every file type defined in your game.
+            foreach (SaveCatgeoryDefinition definition in saveConfig.GetAllCategoryDefintions())
             {
-                string loadPath = SavePathGenerator.GetPath(defintion, profileId);
-                if (!fileStorageService.FileExists(loadPath)) continue;
-
-                string loadedjson = fileStorageService.LoadFile(loadPath);
-                if (string.IsNullOrEmpty(loadedjson)) continue;
-                if (!serializer.TryDeserialize(loadedjson, out SaveFileData loadedData))
-                {
-                    Debug.LogError($"Failed to deserialize file at {loadPath}");
-                    continue;
-                }
-          
-
-                if (!SaveableObjectsRegistry.TryGetValue(defintion.Category, out Dictionary<string, ISaveableBridge> bridgesDataMap))
-                {
-                    // No Live Objects registered Under This Category
-                    continue;
-                }
-
-                foreach (KeyValuePair<string, object> kvp in loadedData.DataMap)
-                {
-                    string guid = kvp.Key;
-                    object objectData = kvp.Value;
-
-                    if(bridgesDataMap.TryGetValue(guid,out ISaveableBridge bridge))
-                    {
-                        bridge.RestoreState(objectData,defintion.Category);
-                    }   
-                    else
-                    {
-                        // LATER: This is where you spawn objects that don't exist yet
-                    }
-                }
+                LoadDataOf(definition.Category);
             }
         }
 
+        public void LoadDataOf(SaveCategory _category)
+        {
+            string profileId = profileManager.CurrentProfileID;
+            SaveCatgeoryDefinition definition = saveConfig.GetCategoryDefinition(_category);
+
+            string loadPath = SavePathGenerator.GetPath(definition, profileId);
+            if (!fileStorageService.FileExists(loadPath)) return;
+
+            string loadedjson = fileStorageService.LoadFile(loadPath);
+            if (string.IsNullOrEmpty(loadedjson)) return;
+
+            if (!serializer.TryDeserialize(loadedjson, out SaveFileData loadedData))
+            {
+                Debug.LogError($"[SaveManager] Corrupted file found at {loadPath}");
+                return;
+            }
+
+            // Check if we have receivers (Bridges)
+            if (!SaveableObjectsRegistry.TryGetValue(_category, out Dictionary<string, ISaveableBridge> bridgesDataMap))
+            {
+                // LOGIC DECISION:
+                // This is where "Spawning Logic" would go later.
+                return;
+            }
+
+            foreach (KeyValuePair<string, object> kvp in loadedData.DataMap)
+            {
+                string guid = kvp.Key;
+                object objectData = kvp.Value;
+
+                if (bridgesDataMap.TryGetValue(guid, out ISaveableBridge bridge))
+                {
+                    bridge.RestoreState(objectData, _category);
+                }
+            }
+        }
 
         public void RegisterSaveableObject(ISaveableBridge bridge, List<SaveCategory> categories)
         {

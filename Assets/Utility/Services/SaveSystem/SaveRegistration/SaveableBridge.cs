@@ -86,7 +86,6 @@ namespace AbstractPixel.Utility
             }
             foreach (SaveableTarget target in saveableTargetsList)
             {
-                //DOUBT: why do we need to specify target.Script here for reflection
                 object capturedData = target.CaptureDataMethod.Invoke(target.Script, null);
                 if (capturedData != null)
                 {
