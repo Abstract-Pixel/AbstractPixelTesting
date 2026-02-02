@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Utility.Save
 {
     public class SaveableBridge : MonoBehaviour, ISaveableBridge
     {

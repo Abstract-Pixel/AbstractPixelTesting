@@ -11,6 +11,7 @@ namespace AbstractPixel.Utility.Save
         public MethodInfo RestoreDataMethod;
         public Type DataToSaveType;
         public string ClassKey = default;
+        public SaveableIdentification Identification;
 
     }
 }

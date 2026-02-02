@@ -1,18 +1,38 @@
 using AbstractPixel.Utility;
 using AbstractPixel.Utility.Save;
+using System;
 using UnityEngine;
 
-[Saveable(SaveCategory.Game, "Fakeo2")]
-public class anotherFako : MonoBehaviour, ISaveable<Vector3Data>
+
+[Serializable]
+public class leaderboardData
 {
-    [SerializeField] Vector3 example;
-    public Vector3Data CaptureData()
+    public int bestTime;
+    public int leaderboardCount;
+    public int leaderboardIndex;
+
+    public leaderboardData(int bestTime, int leaderboardCount, int leaderboardIndex)
+    {
+        this.bestTime = bestTime;
+        this.leaderboardCount = leaderboardCount;
+        this.leaderboardIndex = leaderboardIndex;
+    }
+}
+
+[Saveable(SaveCategory.Game,"anotherFake")]
+public class anotherFako : MonoBehaviour, ISaveable<leaderboardData>
+{
+    [SerializeField] leaderboardData example;
+
+    public leaderboardData CaptureData()
     {
         return example;
     }
 
-    public void RestoreData(Vector3Data _loadedData)
+    public void RestoreData(leaderboardData _loadedData)
     {
-       example = _loadedData;
+        example = _loadedData;
     }
 }
+
+

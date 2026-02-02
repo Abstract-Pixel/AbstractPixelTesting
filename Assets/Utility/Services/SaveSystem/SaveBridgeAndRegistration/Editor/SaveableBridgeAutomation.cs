@@ -2,11 +2,14 @@
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEditor.Build.Reporting;
+using UnityEditor.Build;
 
 namespace AbstractPixel.Utility.Save
 {
     [InitializeOnLoad]
-    public static class SaveableBridgeAutomation
+    public class SaveableBridgeAutomation : IProcessSceneWithReport
     {
         static SaveableBridgeAutomation()
         {
@@ -17,16 +20,30 @@ namespace AbstractPixel.Utility.Save
         {
             if (state == PlayModeStateChange.ExitingEditMode)
             {
-                AddNessecerySaveableBridges();
+                ProcessSceneObjects(SceneManager.GetActiveScene());
             }
-
         }
 
-        static void AddNessecerySaveableBridges()
+        public int callbackOrder { get { return 0; } }
+        public void OnProcessScene(Scene _scene,BuildReport _report)
         {
-            MonoBehaviour[] activeScriptsInScene = Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            ProcessSceneObjects(_scene);
+        }
 
-            foreach (MonoBehaviour script in activeScriptsInScene)
+
+        static void ProcessSceneObjects(Scene _scene)
+        {
+            GameObject[] roots = _scene.GetRootGameObjects();
+            foreach (GameObject root in roots)
+            {
+                AddSaveableBridgeToRootObject(root);
+            }
+        }
+
+        static void AddSaveableBridgeToRootObject(GameObject _rootObject)      
+        {
+            MonoBehaviour[] scriptsOnRoot = _rootObject.GetComponentsInChildren<MonoBehaviour>();
+            foreach (MonoBehaviour script in scriptsOnRoot)
             {
                 if (script.GetType().GetCustomAttribute<SaveableAttribute>() == null)
                 {

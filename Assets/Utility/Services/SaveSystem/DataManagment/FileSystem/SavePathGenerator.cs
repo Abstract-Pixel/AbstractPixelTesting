@@ -27,16 +27,12 @@ namespace AbstractPixel.Utility.Save
         public static string BackupFileExtension { get; set; }
 
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void InitializeConstantPaths()
-        {
-            DebugRootPath = Path.Combine(Application.dataPath, DebugRootSaveFolder);
-            ShipRootPath = Path.Combine(Application.persistentDataPath, RootSaveFolder);
-        }
-
         public static void Initialize(SaveSystemConfigSO config)
         {
             saveConfig = config;
+            DebugRootPath = Path.Combine(Application.dataPath, DebugRootSaveFolder);
+            ShipRootPath = Path.Combine(Application.persistentDataPath, RootSaveFolder);
+
             CurrentRootPath = saveConfig.UseDebugPath ? DebugRootPath : ShipRootPath;
             PrimaryFileExtension = $".{saveConfig.PrimaryFileExtension.ToString().ToLower()}";
             BackupFileExtension = $".{saveConfig.BackupFileExtension.ToString().ToLower()}";
