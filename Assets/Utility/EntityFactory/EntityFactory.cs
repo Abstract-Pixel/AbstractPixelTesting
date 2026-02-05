@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using AbstractPixel.Utility;
 
 public class EntityFactory<TData, TResult> : MonoSingleton<EntityFactory<TData, TResult>>
     where TData : class

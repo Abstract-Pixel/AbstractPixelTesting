@@ -19,8 +19,8 @@ public class leaderboardData
     }
 }
 
-[Saveable(SaveCategory.Game,"anotherFake")]
-public class anotherFako : MonoBehaviour, ISaveable<leaderboardData>
+[Saveable(SaveCategory.Game)]
+public class FakeoNice : MonoBehaviour, ISaveable<leaderboardData>
 {
     [SerializeField] leaderboardData example;
 

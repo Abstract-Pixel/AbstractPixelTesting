@@ -7,12 +7,12 @@ namespace AbstractPixel.Utility.Save
     public class SaveableIdentification
     {
         public string ClassName;
-        public string ClassID;
+        public string GUID;
 
-        public SaveableIdentification(string _className, string _classID)
+        public SaveableIdentification(string _className, string _guid)
         {
             ClassName = _className;
-            ClassID = _classID;
+            GUID = _guid;
         }
     
     }

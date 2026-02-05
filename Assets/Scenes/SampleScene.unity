@@ -350,7 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244b564cac8d804d8567f708d892ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::anotherFako
-  example: {x: 0, y: 0, z: 0}
+  example:
+    bestTime: 0
+    leaderboardCount: 0
+    leaderboardIndex: 0
 --- !u!114 &840363638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +367,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.SaveableBridge
   <UniqueId>k__BackingField: 'MostFake GameObject [cba6aa15]'
+  saveableTargets:
+  - Script: {fileID: 840363637}
+    Identification:
+      ClassName: anotherFako
+      GUID: b5e79ee4-520c-4127-9724-bb4d50c97621
+  - Script: {fileID: 840363635}
+    Identification:
+      ClassName: fakeo
+      GUID: a873ce0b-220d-49c2-8c33-7f6fe1295358
   foundCategoriesList: 
 --- !u!1 &1814946179
 GameObject:
@@ -409,7 +421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244b564cac8d804d8567f708d892ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::anotherFako
-  example: {x: 0, y: 0, z: 0}
+  example:
+    bestTime: 0
+    leaderboardCount: 0
+    leaderboardIndex: 0
 --- !u!4 &1814946182
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +453,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.SaveableBridge
   <UniqueId>k__BackingField: 'MostFake (1) GameObject [9936fd28]'
+  saveableTargets:
+  - Script: {fileID: 1814946181}
+    Identification:
+      ClassName: anotherFako
+      GUID: f8716fb3-1ff1-4e9d-80d6-022cdff1f51f
+  - Script: {fileID: 1814946180}
+    Identification:
+      ClassName: fakeo
+      GUID: b99f60c6-d74f-494d-9bbb-0e2c0adec368
   foundCategoriesList: 
 --- !u!1 &1908389119
 GameObject:

@@ -3,8 +3,8 @@ using AbstractPixel.Utility.Save;
 using System.Collections;
 using UnityEngine;
 
-[Saveable(SaveCategory.Game,"Fakeo")]
-public class fakeo : MonoBehaviour, ISaveable<Vector3Data>
+[Saveable(SaveCategory.Game)]
+public class aio : MonoBehaviour, ISaveable<Vector3Data>
 {
     [SerializeField] Vector3 position;
 
