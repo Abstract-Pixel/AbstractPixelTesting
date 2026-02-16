@@ -3,6 +3,7 @@
   <Project Path="CustomInspector.csproj" />
   <Project Path="AbstractPixel.Utility.csproj" />
   <Project Path="CustomInspector.Helpers.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="CustomInspector.Editor.csproj" />
   <Project Path="AbstractPixel.Utility.Save.csproj" />
   <Project Path="CustomInspector.Helpers.csproj" />

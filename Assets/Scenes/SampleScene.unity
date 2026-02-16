@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15130104}
-  - component: {fileID: 15130103}
+  - component: {fileID: 15130105}
   m_Layer: 0
   m_Name: test
   m_TagString: Untagged
@@ -136,25 +136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &15130103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15130102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0097ab95a37ed2144a026bc80ab6bb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestManager
-  broTest:
-    rid: -2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!4 &15130104
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +151,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15130105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15130102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0097ab95a37ed2144a026bc80ab6bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestManager
+  broTest:
+    rid: 4231831505204150339
+  references:
+    version: 2
+    RefIds:
+    - rid: 4231831505204150339
+      type: {class: AdvancedTest, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
