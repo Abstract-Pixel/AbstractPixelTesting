@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveSystemConfigSO
   <UseDebugPath>k__BackingField: 0
   <GameProfileGuidLength>k__BackingField: 6
-  <StartupPolicy>k__BackingField: 0
+  <StartupPolicy>k__BackingField: 1
   <PrimaryFileExtension>k__BackingField: 1
   ignoredScenes: []
   categoryDefinitionList:

@@ -7,28 +7,31 @@ using UnityEngine;
 
 namespace AbstractPixel.Utility.Save
 {
-    public class SaveableBridge : MonoBehaviour, ISavableBridge
+    public class SavableBridge : MonoBehaviour, ISavableBridge
     {
         [field: SerializeField] public string UniqueId { get; private set; }
+        [SerializeField, HideInInspector] string lastKnownInstanceID = "";
 
-        [SerializeField] private List<SaveableTarget> saveableTargets = new List<SaveableTarget>();
+        [SerializeField] private List<SaveableTarget> savableTargets = new List<SaveableTarget>();
         private List<SaveCategory> foundCategoriesList = new List<SaveCategory>();
 
-        private Dictionary<SaveCategory, List<SaveableTarget>> saveableTargetsRegistry;
+        private Dictionary<SaveCategory, List<SaveableTarget>> savableTargetsRegistry;
 
-        readonly string isaveableCaptureMethod = "CaptureData";
-        readonly string isaveableRestoreMethod = "RestoreData";
-        readonly string stringSepratorIdentifier = "#";
+        readonly string isavableCaptureMethod = "CaptureData";
+        readonly string isavableRestoreMethod = "RestoreData";
+        readonly string stringSeparatorIdentifier = "#";
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
-            if (string.IsNullOrEmpty(UniqueId))
+            if (lastKnownInstanceID != GetCurrentGlobalID() || string.IsNullOrEmpty(UniqueId))
             {
                 string guid = Guid.NewGuid().ToString();
-                UniqueId = $"{gameObject.name} GameObject {stringSepratorIdentifier}[{guid}]";
+                UniqueId = $"{gameObject.name} GameObject {stringSeparatorIdentifier}[{guid}]";
+                lastKnownInstanceID = GetCurrentGlobalID();
             }
 
-            if (saveableTargets == null) saveableTargets = new List<SaveableTarget>();
+            if (savableTargets == null) savableTargets = new List<SaveableTarget>();
 
             MonoBehaviour[] allScripts = GetComponents<MonoBehaviour>();
             List<MonoBehaviour> validScripts = new List<MonoBehaviour>();
@@ -47,18 +50,18 @@ namespace AbstractPixel.Utility.Save
             }
 
             //Clean up removed scripts from the list
-            for (int i = saveableTargets.Count - 1; i >= 0; i--)
+            for (int i = savableTargets.Count - 1; i >= 0; i--)
             {
-                if (saveableTargets[i] == null || saveableTargets[i].Script == null || !validScripts.Contains(saveableTargets[i].Script))
+                if (savableTargets[i] == null || savableTargets[i].Script == null || !validScripts.Contains(savableTargets[i].Script))
                 {
-                    saveableTargets.RemoveAt(i);
+                    savableTargets.RemoveAt(i);
                 }
             }
 
             foreach (MonoBehaviour script in validScripts)
             {
                 // Check if we already have a registration for this specific script reference
-                SaveableTarget existingTarget = saveableTargets.FirstOrDefault(t => t.Script == script);
+                SaveableTarget existingTarget = savableTargets.FirstOrDefault(t => t.Script == script);
 
                 if (existingTarget != null)
                 {
@@ -73,17 +76,25 @@ namespace AbstractPixel.Utility.Save
                 {
                     string newGuid = Guid.NewGuid().ToString();
                     SaveableIdentification id = new SaveableIdentification(script.GetType().Name, newGuid);
-                    saveableTargets.Add(new SaveableTarget(script, id));
+                    savableTargets.Add(new SaveableTarget(script, id));
                 }
             }
+            string GetCurrentGlobalID()
+            {
+                UnityEditor.GlobalObjectId globalId = UnityEditor.GlobalObjectId.GetGlobalObjectIdSlow(this);
+                return globalId.ToString();
+            }
         }
+#endif
+
+
 
         private void Awake()
         {
-            saveableTargetsRegistry = new Dictionary<SaveCategory, List<SaveableTarget>>();
+            savableTargetsRegistry = new Dictionary<SaveCategory, List<SaveableTarget>>();
             foundCategoriesList = new List<SaveCategory>();
 
-            foreach (SaveableTarget target in saveableTargets)
+            foreach (SaveableTarget target in savableTargets)
             {
                 if (target == null || target.Script == null) continue;
 
@@ -94,15 +105,15 @@ namespace AbstractPixel.Utility.Save
                 Type interfaceType = componentType.GetInterface(typeof(ISaveable<>).Name);
                 if (interfaceType == null) continue;
 
-                target.CaptureDataMethod = componentType.GetMethod(isaveableCaptureMethod);
-                target.RestoreDataMethod = componentType.GetMethod(isaveableRestoreMethod);
+                target.CaptureDataMethod = componentType.GetMethod(isavableCaptureMethod);
+                target.RestoreDataMethod = componentType.GetMethod(isavableRestoreMethod);
                 target.DataToSaveType = interfaceType.GetGenericArguments()[0];
 
-                if (!saveableTargetsRegistry.ContainsKey(attribute.Category))
+                if (!savableTargetsRegistry.ContainsKey(attribute.Category))
                 {
-                    saveableTargetsRegistry.Add(attribute.Category, new List<SaveableTarget>());
+                    savableTargetsRegistry.Add(attribute.Category, new List<SaveableTarget>());
                 }
-                saveableTargetsRegistry[attribute.Category].Add(target);
+                savableTargetsRegistry[attribute.Category].Add(target);
 
                 if (!foundCategoriesList.Contains(attribute.Category))
                 {
@@ -115,7 +126,7 @@ namespace AbstractPixel.Utility.Save
         {
             Dictionary<string, object> combinedCapturedDataMap = new Dictionary<string, object>();
 
-            if (!saveableTargetsRegistry.TryGetValue(categoryFilter, out List<SaveableTarget> saveableTargetsList))
+            if (!savableTargetsRegistry.TryGetValue(categoryFilter, out List<SaveableTarget> saveableTargetsList))
             {
                 return null;
             }
@@ -127,7 +138,7 @@ namespace AbstractPixel.Utility.Save
                 {
                     if (target.Identification != null && !string.IsNullOrEmpty(target.Identification.GUID))
                     {
-                        string compositeKey = $"{target.Identification.ClassName} Component {stringSepratorIdentifier}{target.Identification.GUID}";
+                        string compositeKey = $"{target.Identification.ClassName} Component {stringSeparatorIdentifier}{target.Identification.GUID}";
                         combinedCapturedDataMap.Add(compositeKey, capturedData);
                     }
                 }
@@ -141,7 +152,7 @@ namespace AbstractPixel.Utility.Save
             Dictionary<string, object> combinedCapturedDataMap = SaveDataConverter.Convert<Dictionary<string, object>>(data);
             if (combinedCapturedDataMap == null) return;
 
-            if (!saveableTargetsRegistry.TryGetValue(categoryFilter, out List<SaveableTarget> targetsList))
+            if (!savableTargetsRegistry.TryGetValue(categoryFilter, out List<SaveableTarget> targetsList))
             {
                 return;
             }
@@ -164,7 +175,7 @@ namespace AbstractPixel.Utility.Save
 
                 // Extract GUID from "ClassName#GUID"
                 // We split by the LAST '#' to ensure we get the GUID at the end.
-                int separatorIndex = compositeKey.LastIndexOf(stringSepratorIdentifier) + 1;
+                int separatorIndex = compositeKey.LastIndexOf(stringSeparatorIdentifier) + 1;
 
                 string extractedGuid = (separatorIndex != -1) ? compositeKey.Substring(separatorIndex) : compositeKey;
 

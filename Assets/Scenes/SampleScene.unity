@@ -247,18 +247,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8848201ba4a9947ae8a09b00a2df07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveableBridge
-  <UniqueId>k__BackingField: 'GameObject GameObject #[dadd5176-bbeb-43e0-8101-e343715a893a]'
-  saveableTargets:
+  <UniqueId>k__BackingField: 'broski GameObject #[7c23cbef-3668-4b32-ba94-bdf8b47a9458]'
+  lastKnownInstanceID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-362503064-0
+  savableTargets:
   - InpsectorName: FakeoBest
     Script: {fileID: 362503062}
     Identification:
       ClassName: FakeoBest
-      GUID: 79fafddc-6a17-498f-90db-38dc9d0133f9
+      GUID: 83e3974e-8bb0-4a7f-b52d-f8cf8609d344
   - InpsectorName: LameoSon
     Script: {fileID: 362503061}
     Identification:
       ClassName: LameoSon
-      GUID: 82b02254-f22d-45c3-953d-126e349f44de
+      GUID: 0fc33126-1f2b-4dbf-94d5-4b9ac323a3a5
+--- !u!1 &669059477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669059481}
+  - component: {fileID: 669059480}
+  - component: {fileID: 669059479}
+  - component: {fileID: 669059478}
+  m_Layer: 0
+  m_Name: broski (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &669059478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669059477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8848201ba4a9947ae8a09b00a2df07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveableBridge
+  <UniqueId>k__BackingField: 'broski (1) GameObject #[22d39412-71b4-4c69-86bd-ae3a160d8364]'
+  lastKnownInstanceID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-669059478-0
+  savableTargets:
+  - InpsectorName: FakeoBest
+    Script: {fileID: 669059480}
+    Identification:
+      ClassName: FakeoBest
+      GUID: fec9b8c9-4c61-4d1e-9427-04b7b1f18e23
+  - InpsectorName: LameoSon
+    Script: {fileID: 669059479}
+    Identification:
+      ClassName: LameoSon
+      GUID: be6c1f56-d252-41a5-86c8-5914befa9a50
+--- !u!114 &669059479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669059477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012f7127e9b420c458e6eaaccde6e377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LameoSon
+  position: {x: 69, y: 69, z: 69}
+--- !u!114 &669059480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669059477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b244b564cac8d804d8567f708d892ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FakeoBest
+  example:
+    bestTime: 100
+    leaderboardCount: 100
+    leaderboardIndex: 100
+--- !u!4 &669059481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669059477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.06065, y: -0, z: 48.6223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342621201
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,4 +400,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 15130104}
   - {fileID: 362503063}
+  - {fileID: 669059481}
   - {fileID: 1342621203}

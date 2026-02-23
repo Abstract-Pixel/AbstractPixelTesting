@@ -9,9 +9,9 @@ using UnityEditor.Build;
 namespace AbstractPixel.Utility.Save
 {
     [InitializeOnLoad]
-    public class SaveableBridgeAutomation : IProcessSceneWithReport
+    public class SavableBridgeAutomation : IProcessSceneWithReport
     {
-        static SaveableBridgeAutomation()
+        static SavableBridgeAutomation()
         {
             EditorApplication.playModeStateChanged += OnPlayModeChanged;
         }
@@ -54,7 +54,7 @@ namespace AbstractPixel.Utility.Save
                     // It already contains a SaveableBridge
                     continue;
                 }
-                script.gameObject.AddComponent<SaveableBridge>();
+                script.gameObject.AddComponent<SavableBridge>();
                 Debug.Log($"Added Bridge to{script.gameObject.name}");
 
             }
