@@ -8,13 +8,12 @@ namespace AbstractPixel.Utility.Save
     public class SaveManager : PersistentSingleton<SaveManager>
     {
         [SerializeField] private SaveSystemConfigSO saveConfig;
-        private SaveProfileManager profileManager;
-        private Dictionary<SaveCategory, Dictionary<string, ISavableBridge>> savableObjectsRegistry;
+        public SaveProfileManager ProfileManager { get; private set; }
         private IDataStorageService fileStorageService;
         private ISerializer serializer;
 
+        private Dictionary<SaveCategory, Dictionary<string, ISavableBridge>> savableObjectsRegistry;
         readonly string stringSeparatorIdentifier = "#";
-
 
         protected override void Awake()
         {
@@ -26,35 +25,43 @@ namespace AbstractPixel.Utility.Save
             serializer = new JsonSerializer();
 
             savableObjectsRegistry = new Dictionary<SaveCategory, Dictionary<string, ISavableBridge>>();
-            profileManager = new SaveProfileManager(fileStorageService, saveConfig, serializer);
+            ProfileManager = new SaveProfileManager(fileStorageService, saveConfig, serializer);
 
-            LoadSystemMetaData(out SystemMetaData metaData);
-            LoadAllDataByScope(SaveScope.Global);
+            if(LoadSystemMetaData(out SystemMetaData metaData))
+            {
+                LoadAllDataByScope(SaveScope.Global); 
+            }
+            else
+            {
+               Debug.Log("No System MetaData found. Assuming this now first launch");
+            }
             ExecuteProfileStartUpPolicy(metaData);
         }
 
         void ExecuteProfileStartUpPolicy(SystemMetaData _metaData)
         {
-            if (saveConfig.StartupPolicy == SaveStartupPolicy.AutoSetUp)
+            if (saveConfig.StartupPolicy != SaveStartupPolicy.AutoSetUp) return;
+            // Manual or undefined policy, do nothing. Wait for explicit profile selection from external UI or other system.
+
+            bool isMetaDataNullOrEmptyProfileID = _metaData == null || string.IsNullOrEmpty(_metaData.LastSavedProfileID);
+            bool doesProfileDirectoryExist;
+            if (isMetaDataNullOrEmptyProfileID)
             {
-                if (_metaData == null || string.IsNullOrEmpty(_metaData.LastSavedProfileID))
-                {
-                    string newProfilePath = profileManager.CreateNewActiveProfileDirectory();
-                    SaveSystemMetaData();
-                }
-                else if (!profileManager.ProfileDirectoryExists(_metaData.LastSavedProfileID))
-                {
-                    string newProfilePath = profileManager.CreateNewActiveProfileDirectory();
-                    SaveSystemMetaData();
-                }
-                else
-                {
-                    profileManager.SetCurrentActiveProfile(_metaData.LastSavedProfileID);
-                }
+                doesProfileDirectoryExist = false;
             }
             else
             {
-                // Manual or undefined policy, do nothing. Wait for explicit profile selection from external UI or other system.
+                doesProfileDirectoryExist = ProfileManager.ProfileDirectoryExists(_metaData.LastSavedProfileID);
+            }
+
+            if (isMetaDataNullOrEmptyProfileID || !doesProfileDirectoryExist)
+            {
+                string newProfilePath = ProfileManager.CreateNewActiveProfileDirectory();
+                SaveSystemMetaData();
+            }
+            else
+            {
+                ProfileManager.SetCurrentActiveProfile(_metaData.LastSavedProfileID);
             }
         }
 
@@ -75,7 +82,7 @@ namespace AbstractPixel.Utility.Save
             }
             if (bridgesDataMap.Count == 0) return;
 
-            string activeProfileId = profileManager.CurrentProfileID;
+            string activeProfileId = ProfileManager.CurrentProfileID;
             SaveCatgeoryDefinition categoryDefinition = saveConfig.GetCategoryDefinition(_category);
 
             string fileName = SavePathGenerator.GetFileNameBasedOnCategoryDefinition(categoryDefinition);
@@ -132,7 +139,7 @@ namespace AbstractPixel.Utility.Save
 
         public void LoadDataOf(SaveCategory _category)
         {
-            string profileId = profileManager.CurrentProfileID;
+            string profileId = ProfileManager.CurrentProfileID;
             SaveCatgeoryDefinition definition = saveConfig.GetCategoryDefinition(_category);
 
             string loadPath = SavePathGenerator.GetPath(definition, profileId);
@@ -224,12 +231,11 @@ namespace AbstractPixel.Utility.Save
         private void SaveSystemMetaData()
         {
             string metaDataFilePath = SavePathGenerator.GetSaveSystemMetaDataPath();
-            SystemMetaData metaData = new SystemMetaData(profileManager.CurrentProfileID);
+            SystemMetaData metaData = new SystemMetaData(ProfileManager.CurrentProfileID);
             if (serializer.TrySerialize(metaData, out string json))
             {
                 fileStorageService.SaveFile(json, metaDataFilePath);
             }
-            fileStorageService.SaveFile(json, metaDataFilePath);
         }
 
         private bool LoadSystemMetaData(out SystemMetaData metaData)
