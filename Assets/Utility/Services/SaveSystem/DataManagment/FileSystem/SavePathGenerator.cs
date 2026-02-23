@@ -78,6 +78,11 @@ namespace AbstractPixel.Utility.Save
             return Path.Combine(CurrentRootPath, GlobalSavesFolder);
         }
 
+        public static string GetSaveSystemMetaDataPath()
+        {
+            return Path.Combine(GetGlobalPath(), SystemMetaData.MetaDataFileName + PrimaryFileExtension);
+        }
+
         private static string GetGlobalBackupPath()
         {
             return Path.Combine(CurrentRootPath, GlobalSavesFolder, GlobalBackupSavesFolder);

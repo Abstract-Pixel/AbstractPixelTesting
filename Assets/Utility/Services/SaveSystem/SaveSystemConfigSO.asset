@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveSystemConfigSO
   <UseDebugPath>k__BackingField: 0
   <GameProfileGuidLength>k__BackingField: 6
+  <StartupPolicy>k__BackingField: 0
   <PrimaryFileExtension>k__BackingField: 1
-  <BackupFileExtension>k__BackingField: 4
   ignoredScenes: []
   categoryDefinitionList:
   - DisplayName: Input
@@ -42,9 +42,3 @@ MonoBehaviour:
     CustomFileName: fakedData
     EncryptFile: 0
     IsSceneSpecific: 0
-  - DisplayName: Position
-    Category: 3
-    DirectoryScope: 2
-    CustomFileName: PositData
-    EncryptFile: 0
-    IsSceneSpecific: 1

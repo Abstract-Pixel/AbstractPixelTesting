@@ -4,14 +4,14 @@ using UnityEngine;
 namespace AbstractPixel.Utility.Save
 {
     [Serializable]
-    public class GlobalMetaData
+    public class SystemMetaData
     {
-        public static readonly string MetaDataFileName = "GlobalMetaData";
+        public static readonly string MetaDataFileName = "SystemMetaData";
         public string Version;
         public string LastSavedProfileID;
         public string CreationDateAndTime;
 
-        public GlobalMetaData(string _lastSavedProfileID)
+        public SystemMetaData(string _lastSavedProfileID)
         {
             Version = Application.version;
             LastSavedProfileID = _lastSavedProfileID;

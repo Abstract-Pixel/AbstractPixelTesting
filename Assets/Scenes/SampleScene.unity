@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f7127e9b420c458e6eaaccde6e377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LameoSon
-  position: {x: 60, y: 60, z: 60}
+  position: {x: 69, y: 69, z: 69}
 --- !u!114 &362503062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3ba1646fd05bf4dbe260947b5f8eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveManager
+  AutoUnparentOnAwake: 1
   saveConfig: {fileID: 11400000, guid: 79c67943837e9df43a6d5974e87d3bd7, type: 2}
 --- !u!4 &1342621203
 Transform:

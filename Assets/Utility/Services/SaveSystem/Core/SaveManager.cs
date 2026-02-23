@@ -15,8 +15,6 @@ namespace AbstractPixel.Utility.Save
 
         readonly string stringSeparatorIdentifier = "#";
 
-        // Remove Later
-        string tempProfileID = "TEST_101";
 
         protected override void Awake()
         {
@@ -30,11 +28,34 @@ namespace AbstractPixel.Utility.Save
             savableObjectsRegistry = new Dictionary<SaveCategory, Dictionary<string, ISavableBridge>>();
             profileManager = new SaveProfileManager(fileStorageService, saveConfig, serializer);
 
-            // For Testing purposes, replace and remove with actual profile loading and managment
-            string profilePath = profileManager.CreateCustomProfileDirectory(tempProfileID);
-            profileManager.SetCurrentActiveProfile(tempProfileID, profilePath);
-
+            LoadSystemMetaData(out SystemMetaData metaData);
             LoadAllDataByScope(SaveScope.Global);
+            ExecuteProfileStartUpPolicy(metaData);
+        }
+
+        void ExecuteProfileStartUpPolicy(SystemMetaData _metaData)
+        {
+            if (saveConfig.StartupPolicy == SaveStartupPolicy.AutoSetUp)
+            {
+                if (_metaData == null || string.IsNullOrEmpty(_metaData.LastSavedProfileID))
+                {
+                    string newProfilePath = profileManager.CreateNewActiveProfileDirectory();
+                    SaveSystemMetaData();
+                }
+                else if (!profileManager.ProfileDirectoryExists(_metaData.LastSavedProfileID))
+                {
+                    string newProfilePath = profileManager.CreateNewActiveProfileDirectory();
+                    SaveSystemMetaData();
+                }
+                else
+                {
+                    profileManager.SetCurrentActiveProfile(_metaData.LastSavedProfileID);
+                }
+            }
+            else
+            {
+                // Manual or undefined policy, do nothing. Wait for explicit profile selection from external UI or other system.
+            }
         }
 
         public void SaveALL()
@@ -94,7 +115,6 @@ namespace AbstractPixel.Utility.Save
 
         public void LoadALL()
         {
-            // This ensures we try to load every file type defined in your game.
             foreach (SaveCatgeoryDefinition definition in saveConfig.GetAllCategoryDefinitions())
             {
                 LoadDataOf(definition.Category);
@@ -162,7 +182,6 @@ namespace AbstractPixel.Utility.Save
 
             foreach (SaveCategory category in categories)
             {
-                // 1. Ensure the Bucket (Inner Dictionary) exists for this Category
                 if (!savableObjectsRegistry.ContainsKey(category))
                 {
                     savableObjectsRegistry.Add(category, new Dictionary<string, ISavableBridge>());
@@ -177,7 +196,6 @@ namespace AbstractPixel.Utility.Save
                 }
                 else
                 {
-                    // Optional: Update the reference if it somehow got recreated
                     categoryBucket[extractedGuid] = bridge;
                 }
             }
@@ -203,6 +221,32 @@ namespace AbstractPixel.Utility.Save
             }
         }
 
+        private void SaveSystemMetaData()
+        {
+            string metaDataFilePath = SavePathGenerator.GetSaveSystemMetaDataPath();
+            SystemMetaData metaData = new SystemMetaData(profileManager.CurrentProfileID);
+            if (serializer.TrySerialize(metaData, out string json))
+            {
+                fileStorageService.SaveFile(json, metaDataFilePath);
+            }
+            fileStorageService.SaveFile(json, metaDataFilePath);
+        }
+
+        private bool LoadSystemMetaData(out SystemMetaData metaData)
+        {
+            string metaDataFilePath = SavePathGenerator.GetSaveSystemMetaDataPath();
+            metaData = null;
+            if (!fileStorageService.FileExists(metaDataFilePath)) return false;
+            string loadedJson = fileStorageService.LoadFile(metaDataFilePath);
+            if (string.IsNullOrEmpty(loadedJson)) return false;
+            if (!serializer.TryDeserialize(loadedJson, out metaData))
+            {
+                Debug.LogError($"[SaveManager] Corrupted System MetaData file found at {metaDataFilePath}");
+                return false;
+            }
+            return true;
+        }
+
         private bool IsInstanceNull()
         {
             if (instance == null)
@@ -223,9 +267,9 @@ namespace AbstractPixel.Utility.Save
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
-        void OnSceneLoaded(Scene scene,LoadSceneMode loadSceneMode)
-        {       
-            if(saveConfig.IsSceneIgnored(scene.name)) { return; }
+        void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        {
+            if (saveConfig.IsSceneIgnored(scene.name)) { return; }
             StartCoroutine(RestoreDataRoutine());
         }
 
@@ -235,6 +279,7 @@ namespace AbstractPixel.Utility.Save
             // May add an extra wait if needed, but this should be sufficient for most cases.
             yield return new WaitForEndOfFrame();
             LoadAllDataByScope(SaveScope.GameProfile);
+            //SaveDataOf(SaveCategory.Game);
         }
     }
 }
