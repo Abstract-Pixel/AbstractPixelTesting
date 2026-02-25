@@ -330,9 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FakeoBest
   example:
-    bestTime: 100
-    leaderboardCount: 100
-    leaderboardIndex: 100
+    bestTime: 0
+    leaderboardCount: 0
+    leaderboardIndex: 0
 --- !u!4 &669059481
 Transform:
   m_ObjectHideFlags: 0
@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 1561839625}
   - component: {fileID: 1561839624}
   - component: {fileID: 1561839626}
+  - component: {fileID: 1561839627}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -458,6 +459,26 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     playerName: 
   istesting: 0
+--- !u!114 &1561839627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561839623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8848201ba4a9947ae8a09b00a2df07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SavableBridge
+  <UniqueId>k__BackingField: 'GameObject GameObject #[a02e495d-65f3-4e01-954b-964046706e96]'
+  lastKnownInstanceID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-1561839627-0
+  savableTargets:
+  - InpsectorName: LameoSon
+    Script: {fileID: 1561839624}
+    Identification:
+      ClassName: LameoSon
+      GUID: 1df2f929-8aab-466b-961f-abf6e3b0718c
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

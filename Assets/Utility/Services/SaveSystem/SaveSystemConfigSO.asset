@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef6100df71bb3f4fb3f307199f3c8db, type: 3}
   m_Name: SaveSystemConfigSO
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SaveSystemConfigSO
-  <UseDebugPath>k__BackingField: 0
+  <UseDebugPath>k__BackingField: 1
   <GameProfileGuidLength>k__BackingField: 6
   <StartupPolicy>k__BackingField: 1
   <PrimaryFileExtension>k__BackingField: 1
