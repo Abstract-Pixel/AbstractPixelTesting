@@ -404,6 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561839625}
   - component: {fileID: 1561839624}
+  - component: {fileID: 1561839626}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -439,6 +440,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1561839626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561839623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb70a81a136e0f4190875f109df1a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Booyah
+  exampleField: 0
+  leaderboard:
+    score: 0
+    position: {x: 0, y: 0, z: 0}
+    playerName: 
+  istesting: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

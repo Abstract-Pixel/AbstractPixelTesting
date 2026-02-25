@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -54,6 +55,80 @@ namespace AbstractPixel.Utility
                 propertyLockText.style.backgroundColor = bgColor;
             });
             return propertyContainer;
+        }
+
+        private Dictionary<string, bool> lockStates = new Dictionary<string, bool>();
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            // 1. THE GOLDEN RULE: Open the Sandbox
+            // This syncs the isExpanded state and prevents layout overlapping!
+            EditorGUI.BeginProperty(position, label, property);
+
+            // 2. Math
+            const float LOCK_BUTTON_WIDTH = 30f;
+            Rect propertyRect = new Rect(position.x, position.y, position.width - LOCK_BUTTON_WIDTH, position.height);
+            Rect lockRect = new Rect(position.x + position.width - LOCK_BUTTON_WIDTH, position.y, LOCK_BUTTON_WIDTH, EditorGUIUtility.singleLineHeight);
+
+            // 3. State Management
+            if (!lockStates.TryGetValue(property.propertyPath, out bool isLocked))
+            {
+                isLocked = true;
+                lockStates[property.propertyPath] = isLocked;
+            }
+
+            ReadOnlyAttribute readOnlyAttribute = (ReadOnlyAttribute)attribute;
+
+            // 4. Early Return (Safely closing the Sandbox!)
+            if (!readOnlyAttribute.IsEditable)
+            {
+                GUI.enabled = false;
+                EditorGUI.PropertyField(propertyRect, property, label, true);
+                GUI.enabled = true;
+                EditorGUI.EndProperty();
+                return;
+            }
+
+            // 5. Draw Property
+            GUI.enabled = !isLocked;
+            EditorGUI.PropertyField(propertyRect, property, label, true);
+            GUI.enabled = true;
+
+            // 6. The Invisible Anchor Hack (Forces Hover Repaint)
+            Color originalColor = GUI.color;
+            GUI.color = Color.clear;
+            bool isClicked = GUI.Button(lockRect, "", GUI.skin.button);
+            GUI.color = originalColor;
+
+            if (isClicked)
+            {
+                isLocked = !isLocked;
+                lockStates[property.propertyPath] = isLocked;
+            }
+
+            // 7. Draw Custom Visuals
+            bool isHovering = position.Contains(Event.current.mousePosition);
+            if (isHovering)
+            {
+                Color bgColor = isLocked ? new Color(0.7f, 0.7f, 0.7f, 1f) : new Color(0.15f, 0.15f, 0.15f, 1f);
+                Color originalBg = GUI.backgroundColor;
+                GUI.backgroundColor = bgColor;
+                GUI.Box(lockRect, GUIContent.none, EditorStyles.helpBox);
+                GUI.backgroundColor = originalBg;
+
+                GUIStyle lockStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
+                GUI.Label(lockRect, isLocked ? "🔒" : "🔓", lockStyle);
+            }
+
+            // 8. Cursor
+            EditorGUIUtility.AddCursorRect(lockRect, MouseCursor.Link);
+
+            // 9. THE GOLDEN RULE: Close the Sandbox
+            EditorGUI.EndProperty();
+        }
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return EditorGUI.GetPropertyHeight(property, label, true);
         }
     }
 }

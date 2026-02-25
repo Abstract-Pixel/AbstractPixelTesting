@@ -8,10 +8,10 @@ namespace AbstractPixel.Utility.Save
 {
     public class SavableBridge : MonoBehaviour, ISavableBridge
     {
-        [field: SerializeField] public string UniqueId { get; private set; }
+        [field: SerializeField,ReadOnly(true)] public string UniqueId { get; private set; }
         [SerializeField,HideInInspector] string lastKnownInstanceID = "";
 
-        [SerializeField] private List<SaveableTarget> savableTargets = new List<SaveableTarget>();
+        [SerializeField,ReadOnly] private List<SaveableTarget> savableTargets = new List<SaveableTarget>();
         private List<SaveCategory> foundCategoriesList = new List<SaveCategory>();
 
         private Dictionary<SaveCategory, List<SaveableTarget>> savableTargetsRegistry;
