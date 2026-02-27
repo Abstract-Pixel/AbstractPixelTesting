@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 1561839626}
   - component: {fileID: 1561839627}
   m_Layer: 0
-  m_Name: boso
+  m_Name: gazo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f7127e9b420c458e6eaaccde6e377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LameoSon
-  position: {x: 100, y: 100, z: 1000}
+  position: {x: 0, y: 0, z: 0}
 --- !u!4 &1561839625
 Transform:
   m_ObjectHideFlags: 0
@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8848201ba4a9947ae8a09b00a2df07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AbstractPixel.Utility.Save::AbstractPixel.Utility.Save.SavableBridge
-  <UniqueId>k__BackingField: 'boso GameObject #[62bf9bbc-afde-492a-84ab-571016760559]'
+  <UniqueId>k__BackingField: 'gazo GameObject #[62bf9bbc-afde-492a-84ab-571016760559]'
   lastKnownGlobalObjectID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-1561839627-0
-  lastKnownGameObjectName: boso
+  lastKnownGameObjectName: gazo
   savableTargets:
   - InpsectorName: LameoSon
     Script: {fileID: 1561839624}

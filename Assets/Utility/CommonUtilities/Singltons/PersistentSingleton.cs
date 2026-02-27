@@ -8,8 +8,21 @@ namespace AbstractPixel.Utility
 
         protected static T instance;
         protected static bool isApplicationQuitting = false;
+
         public static bool HasInstance => instance != null;
         public static T TryGetInstance() => HasInstance ? instance : null;
+
+   
+        static PersistentSingleton()
+        {
+            StaticsResetter.OnResetStatics += ResetState;
+        }
+
+        private static void ResetState()
+        {
+            instance = null;
+            isApplicationQuitting = false;
+        }
 
         public static T Instance
         {
@@ -40,7 +53,6 @@ namespace AbstractPixel.Utility
 
         protected virtual void InitializeSingleton()
         {
-            isApplicationQuitting = false;
             if (AutoUnparentOnAwake)
             {
                 transform.SetParent(null);
@@ -62,8 +74,10 @@ namespace AbstractPixel.Utility
 
         private void OnDestroy()
         {
-            instance = null;
-            isApplicationQuitting = false;
+            if (instance == this)
+            {
+                instance = null;
+            }
         }
 
         private void OnApplicationQuit()

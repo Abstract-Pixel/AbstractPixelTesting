@@ -14,6 +14,7 @@ namespace AbstractPixel.Utility.Save
 
         private Dictionary<SaveCategory, Dictionary<string, ISavableBridge>> savableObjectsRegistry;
         readonly string stringSeparatorIdentifier = "#";
+        private bool hasDoneInitialBootLoad = false;
 
         protected override void Awake()
         {
@@ -265,21 +266,43 @@ namespace AbstractPixel.Utility.Save
 
         private void OnEnable()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneLoaded += AutomaticSceneDataLoadOnSceneLoaded;
+        }
+
+        // Only used for logic that is after core Save Manager Initialization.Should not be used for the core Save Manager initialization
+        private void Start()
+        {
+            if(!hasDoneInitialBootLoad)
+            {
+                ManualSceneDataLoadInitialization();
+            }     
         }
 
         private void OnDisable()
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.sceneLoaded -= AutomaticSceneDataLoadOnSceneLoaded;
         }
 
-        void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+        void AutomaticSceneDataLoadOnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
+            if (hasDoneInitialBootLoad) { return; }
+
+            hasDoneInitialBootLoad = true;
             if (saveConfig.IsSceneIgnored(scene.name)) { return; }
-            StartCoroutine(RestoreDataRoutine());
+            StartCoroutine(RestoreSceneDataRoutine());
         }
 
-        IEnumerator RestoreDataRoutine()
+        void ManualSceneDataLoadInitialization()
+        {
+            if (hasDoneInitialBootLoad) { return; }
+        
+            hasDoneInitialBootLoad = true;
+            Scene currentScene = SceneManager.GetActiveScene();
+            if (saveConfig.IsSceneIgnored(currentScene.name)) { return; }
+            StartCoroutine(RestoreSceneDataRoutine());
+        }
+
+        IEnumerator RestoreSceneDataRoutine()
         {
             // Make sure everything in the scene is initialized before we try to restore data to objects.
             // May add an extra wait if needed, but this should be sufficient for most cases.
