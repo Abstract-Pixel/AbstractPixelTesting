@@ -1,10 +1,11 @@
 ﻿<Solution>
   <Project Path="CustomInspector.Documentation.Editor.csproj" />
+  <Project Path="AbstractPixel.SaveSystem.csproj" />
   <Project Path="CustomInspector.csproj" />
   <Project Path="AbstractPixel.Utility.csproj" />
   <Project Path="CustomInspector.Helpers.Editor.csproj" />
+  <Project Path="AbstractPixel.SaveSystem.Editor.csproj" />
   <Project Path="CustomInspector.Editor.csproj" />
-  <Project Path="AbstractPixel.Utility.Save.csproj" />
   <Project Path="CustomInspector.Helpers.csproj" />
   <Project Path="NuGetForUnity.csproj" />
   <Project Path="CustomInspector.Demo.csproj" />
