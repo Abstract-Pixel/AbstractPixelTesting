@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f7127e9b420c458e6eaaccde6e377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LameoSon
-  position: {x: 100, y: 100, z: 100}
+  position: {x: 100, y: 0, z: 100}
 --- !u!4 &1561839625
 Transform:
   m_ObjectHideFlags: 0

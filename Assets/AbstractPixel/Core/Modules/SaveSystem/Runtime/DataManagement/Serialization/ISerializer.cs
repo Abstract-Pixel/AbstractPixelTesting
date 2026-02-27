@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public interface ISerializer
     {

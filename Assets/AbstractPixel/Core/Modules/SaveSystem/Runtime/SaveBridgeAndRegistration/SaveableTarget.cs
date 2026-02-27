@@ -2,7 +2,7 @@ using System.Reflection;
 using System;
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [Serializable]
     public class SaveableTarget

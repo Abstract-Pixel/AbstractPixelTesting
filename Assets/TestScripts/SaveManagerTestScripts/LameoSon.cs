@@ -1,10 +1,10 @@
-using AbstractPixel.Utility;
-using AbstractPixel.Utility.Save;
+using AbstractPixel.Core;
+using AbstractPixel.SaveSystem;
 using System.Collections;
 using UnityEngine;
 
 [Saveable(SaveCategory.Game)]
-public class LameoSon : MonoBehaviour, ISaveable<Vector3Data>
+public class LameoSon : MonoBehaviour, ISavable<Vector3Data>
 {
     [ReadOnly(true)] public Vector3 position;
 

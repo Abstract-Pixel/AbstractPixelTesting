@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [Serializable]
     public struct  QuaternionData

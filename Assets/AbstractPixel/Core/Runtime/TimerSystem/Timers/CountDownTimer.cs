@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     public class CountDownTimer : Timer
     {

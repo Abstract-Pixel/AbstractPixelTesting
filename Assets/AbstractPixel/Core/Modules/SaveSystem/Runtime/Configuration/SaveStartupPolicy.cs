@@ -1,5 +1,5 @@
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public enum SaveStartupPolicy
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [Serializable]
     public sealed class GameProfileManifest

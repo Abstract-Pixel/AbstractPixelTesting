@@ -2,7 +2,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for Scene specific logic
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public static class SavePathGenerator
     {

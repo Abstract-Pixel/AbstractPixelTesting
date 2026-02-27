@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 using UnityEditor;
 # endif
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core.Editor
 {
     public class TimerBootstrapper
     {

@@ -1,7 +1,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public static class SaveDataConverter
     {

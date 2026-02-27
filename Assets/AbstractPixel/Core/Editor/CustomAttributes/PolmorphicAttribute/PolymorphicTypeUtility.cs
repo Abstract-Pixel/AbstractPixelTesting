@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core.Editor
 {
     public static class PolymorphicTypeUtility
     {

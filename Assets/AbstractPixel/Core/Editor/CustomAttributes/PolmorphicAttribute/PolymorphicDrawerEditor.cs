@@ -6,7 +6,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core.Editor
 {
     [CustomPropertyDrawer(typeof(PolymorphicAttribute), true)]
     public class PolymorphicDrawerEditor : PropertyDrawer

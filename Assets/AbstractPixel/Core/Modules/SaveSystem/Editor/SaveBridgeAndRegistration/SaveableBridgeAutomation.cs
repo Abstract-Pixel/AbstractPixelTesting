@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor.Build.Reporting;
 using UnityEditor.Build;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem.Editor
 {
     [InitializeOnLoad]
     public class SavableBridgeAutomation : IProcessSceneWithReport

@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AbstractPixel.Core;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public class SaveManager : PersistentSingleton<SaveManager>
     {

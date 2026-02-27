@@ -1,5 +1,5 @@
-using AbstractPixel.Utility;
-using AbstractPixel.Utility.Save;
+using AbstractPixel.Core;
+using AbstractPixel.SaveSystem;
 using System;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ public class LeaderboardData
     }
 }
 [Saveable(SaveCategory.Game)]
-public class FakeoBest : MonoBehaviour,ISaveable<LeaderboardData>
+public class FakeoBest : MonoBehaviour,ISavable<LeaderboardData>
 {
     [SerializeField] LeaderboardData example;
 

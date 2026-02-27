@@ -7,7 +7,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem.Editor
 {
     [InitializeOnLoad]
     public static class SaveSystemBodyGuard
@@ -56,7 +56,7 @@ namespace AbstractPixel.Utility.Save
                 }
 
                 SaveableAttribute saveableAttribute = type.GetCustomAttribute<SaveableAttribute>();
-                bool hasSaveInterface = ImplementsGenericInterface(type, typeof(ISaveable<>));
+                bool hasSaveInterface = ImplementsGenericInterface(type, typeof(ISavable<>));
 
                 if ((saveableAttribute != null))
                 {

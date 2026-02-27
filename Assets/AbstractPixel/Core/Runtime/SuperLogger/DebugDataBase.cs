@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     [CreateAssetMenu(fileName = "DebugDataBase", menuName = "Utility/DebugDataBase")]
     public class DebugDataBase : ScriptableObject

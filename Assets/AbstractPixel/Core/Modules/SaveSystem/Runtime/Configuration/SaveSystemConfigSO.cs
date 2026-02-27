@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [CreateAssetMenu(fileName = "SaveSystemConfigSO", menuName = "Utility/SaveSystemConfigSO")]
     public class SaveSystemConfigSO : ScriptableObject

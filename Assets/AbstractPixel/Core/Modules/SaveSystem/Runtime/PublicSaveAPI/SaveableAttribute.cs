@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [AttributeUsage(AttributeTargets.Class,AllowMultiple =false,Inherited =true)]
     public class SaveableAttribute : Attribute

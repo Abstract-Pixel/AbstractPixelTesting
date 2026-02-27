@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     [Serializable]
     public sealed class SaveCatgeoryDefinition

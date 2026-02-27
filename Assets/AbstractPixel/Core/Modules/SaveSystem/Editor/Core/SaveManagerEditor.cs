@@ -3,19 +3,18 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.IO;
-using System;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem.Editor
 {
     [CustomEditor(typeof(SaveManager))]
-    public class SaveManagerEditor : Editor
+    public class SaveManagerEditor : UnityEditor.Editor
     {
         [SerializeField] StyleSheet saveManagerUSSStyleSheet;
         public override VisualElement CreateInspectorGUI()
         {
             VisualElement root = new VisualElement();
             InspectorElement.FillDefaultInspector(root, serializedObject, this);
-            saveManagerUSSStyleSheet=AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Utility/Services/SaveSystem/Editor/SaveManagerEditorUSS.uss");
+            saveManagerUSSStyleSheet=AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/AbstractPixel/Core/Modules/SaveSystem/Editor/Core/SaveManagerEditorUSS.uss");
             if (saveManagerUSSStyleSheet != null)
             {
                 root.styleSheets.Add(saveManagerUSSStyleSheet);
@@ -84,6 +83,7 @@ namespace AbstractPixel.Utility.Save
                 {
                     SaveManager saveManager = (SaveManager)target;
                     saveManager.SaveALL();
+                    Debug.Log("[Save System: FORCED] : Save all data executed.");
                 }
                 else
                 {
@@ -97,6 +97,7 @@ namespace AbstractPixel.Utility.Save
                 {
                     SaveManager saveManager = (SaveManager)target;
                     saveManager.LoadALL();
+                    Debug.Log("[Save System: FORCED] : Load all data executed.");
                 }
                 else
                 {

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.LowLevel;
 using UnityEngine.PlayerLoop;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     public static class PlayerLoopUtils
     {

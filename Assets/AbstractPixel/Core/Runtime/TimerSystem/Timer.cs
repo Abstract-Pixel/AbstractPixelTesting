@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     public abstract class Timer: IDisposable
     {

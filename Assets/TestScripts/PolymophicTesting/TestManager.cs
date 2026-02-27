@@ -1,5 +1,5 @@
 using UnityEngine;
-using AbstractPixel.Utility;
+using AbstractPixel.Core;
 
 
 public class TestManager : MonoBehaviour

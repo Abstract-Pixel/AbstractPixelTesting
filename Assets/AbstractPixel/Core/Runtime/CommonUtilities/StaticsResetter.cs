@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     /// <summary>
     /// A global utility to clear static variables when entering Play Mode,

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     public static class GameLogger
     {

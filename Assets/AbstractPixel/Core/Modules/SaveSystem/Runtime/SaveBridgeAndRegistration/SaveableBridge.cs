@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using AbstractPixel.Core;
 
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     /// <summary>Provides a bridge component for managing the saving and restoring of state for associated saveable targets
     /// within a Unity GameObject. Implements the ISavableBridge interface to support category-based serialization and
@@ -94,7 +95,7 @@ namespace AbstractPixel.Utility.Save
             {
                 if (script == null) continue;
                 Type type = script.GetType();
-                if (type.GetInterface(typeof(ISaveable<>).Name) == null) continue;
+                if (type.GetInterface(typeof(ISavable<>).Name) == null) continue;
                 if (type.GetCustomAttribute<SaveableAttribute>() == null) continue;
                 validScripts.Add(script);
             }
@@ -149,7 +150,7 @@ namespace AbstractPixel.Utility.Save
                 SaveableAttribute attribute = componentType.GetCustomAttribute<SaveableAttribute>();
                 if (attribute == null) continue;
 
-                Type interfaceType = componentType.GetInterface(typeof(ISaveable<>).Name);
+                Type interfaceType = componentType.GetInterface(typeof(ISavable<>).Name);
                 if (interfaceType == null) continue;
 
                 target.CaptureDataMethod = componentType.GetMethod(isavableCaptureMethod);

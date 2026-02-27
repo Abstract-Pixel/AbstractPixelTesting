@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem.Editor
 {
     public static class SaveSystemToolsMenu
     {
@@ -42,9 +42,8 @@ namespace AbstractPixel.Utility.Save
                 if (Directory.Exists(SavePathGenerator.DebugRootPath))
                     Directory.Delete(SavePathGenerator.DebugRootPath, true);
 
-                Debug.Log("[SaveSystem] All files deleted via Tools Menu.");
+                Debug.Log("[SaveSystem: FORCED] All files deleted via Tools Menu.");
             }
-
         }
 
         #region Helpers

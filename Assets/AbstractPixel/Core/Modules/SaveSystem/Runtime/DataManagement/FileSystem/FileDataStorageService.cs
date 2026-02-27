@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public sealed class FileDataStorageService : IDataStorageService
     {

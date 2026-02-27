@@ -2,7 +2,7 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public class JsonSerializer : ISerializer
     {

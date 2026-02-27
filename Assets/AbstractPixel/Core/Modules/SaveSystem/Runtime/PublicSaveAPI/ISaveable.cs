@@ -1,9 +1,9 @@
-using AbstractPixel.Utility.Save;
+using AbstractPixel.Core;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.SaveSystem
 {
-    public  interface ISaveable<T>
+    public  interface ISavable<T>
     {
         public T CaptureData();
         public void RestoreData(T _loadedData); 

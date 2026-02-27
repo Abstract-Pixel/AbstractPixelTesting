@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     public class PersistentSingleton<T> : MonoBehaviour where T : Component
     {

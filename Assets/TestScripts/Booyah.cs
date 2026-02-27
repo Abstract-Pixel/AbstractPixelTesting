@@ -1,4 +1,4 @@
-using AbstractPixel.Utility;
+using AbstractPixel.Core;
 using UnityEngine;
 
 public class Booyah : MonoBehaviour

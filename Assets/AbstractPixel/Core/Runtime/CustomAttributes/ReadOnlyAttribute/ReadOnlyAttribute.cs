@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple =  false)]
     public class ReadOnlyAttribute : PropertyAttribute

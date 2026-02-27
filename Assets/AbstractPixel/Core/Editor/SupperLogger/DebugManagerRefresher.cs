@@ -5,7 +5,7 @@ using System;
 using UnityEngine;
 using System.Linq;
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core.Editor
 {
     public class DebugManagerRefresher
     {

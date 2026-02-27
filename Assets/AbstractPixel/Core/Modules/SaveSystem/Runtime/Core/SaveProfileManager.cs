@@ -1,9 +1,9 @@
-using AbstractPixel.Utility.Save;
+using AbstractPixel.Core;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace AbstractPixel.Utility.Save
+namespace AbstractPixel.SaveSystem
 {
     public class SaveProfileManager
     {

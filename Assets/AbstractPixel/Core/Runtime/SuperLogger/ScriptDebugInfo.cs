@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 
 
-namespace AbstractPixel.Utility
+namespace AbstractPixel.Core
 {
     [Serializable]
     public struct ScriptDebugInfo
