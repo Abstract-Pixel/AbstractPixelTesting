@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 using UnityEditor;
 # endif
 
-namespace AbstractPixel.Core.Editor
+namespace AbstractPixel.Core
 {
     public class TimerBootstrapper
     {
@@ -17,9 +17,9 @@ namespace AbstractPixel.Core.Editor
         private static void Initialize()
         {
             PlayerLoopSystem currentPlayerLoop = PlayerLoop.GetCurrentPlayerLoop();
-           
-            if(!InsertTimerManager<Update>(ref currentPlayerLoop, 0))
-            { 
+
+            if (!InsertTimerManager<Update>(ref currentPlayerLoop, 0))
+            {
                 Debug.LogError("Failed to insert TimerManager into Player Loop.");
             }
             PlayerLoop.SetPlayerLoop(currentPlayerLoop);
@@ -29,7 +29,7 @@ namespace AbstractPixel.Core.Editor
 
             EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
-#endif
+
             static void OnPlayModeStateChanged(PlayModeStateChange state)
             {
                 if (state == PlayModeStateChange.ExitingPlayMode)
@@ -40,6 +40,7 @@ namespace AbstractPixel.Core.Editor
                     TimerManager.ClearTimers();
                 }
             }
+#endif
 
         }
 
