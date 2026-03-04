@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.abstractpixel.library": {
+      "version": "https://github.com/Abstract-Pixel/AbstractPixel-CodeLibrary.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.2"
+      },
+      "hash": "a11406d7185991dd5e5d71a7b24af3788f14543e"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,

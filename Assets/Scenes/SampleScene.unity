@@ -282,6 +282,7 @@ MonoBehaviour:
     score: 69
     position: {x: 0, y: 0, z: 0}
     playerName: 
+    isLeaderboard: 0
   istesting: 0
 --- !u!114 &1561839627
 MonoBehaviour:
@@ -298,12 +299,7 @@ MonoBehaviour:
   <UniqueId>k__BackingField: 'gazo GameObject #[62bf9bbc-afde-492a-84ab-571016760559]'
   lastKnownGlobalObjectID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-1561839627-0
   lastKnownGameObjectName: gazo
-  savableTargets:
-  - InpsectorName: LameoSon
-    Script: {fileID: 1561839624}
-    Identification:
-      ClassName: LameoSon
-      GUID: 1df2f929-8aab-466b-961f-abf6e3b0718c
+  savableTargets: []
 --- !u!1 &1586333314
 GameObject:
   m_ObjectHideFlags: 0
