@@ -18,7 +18,7 @@ public class LeaderboardData
         this.leaderboardIndex = leaderboardIndex;
     }
 }
-[Saveable(SaveCategory.Game)]
+[Savable(SaveCategory.Game)]
 public class FakeoBest : MonoBehaviour,ISavable<LeaderboardData>
 {
     [SerializeField] LeaderboardData example;
