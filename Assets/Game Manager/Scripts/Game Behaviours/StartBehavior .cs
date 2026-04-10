@@ -7,7 +7,7 @@ namespace Game_Manager.GameBehaviors
     {
         public StartBehavior(BaseGameBehaviorConfigSO _behaviorConfigSO) : base(_behaviorConfigSO)
         {
-            eventType = GameStateEvent.OnStart;
+            EventType = GameStateEvent.OnStart;
         }
     }
 }

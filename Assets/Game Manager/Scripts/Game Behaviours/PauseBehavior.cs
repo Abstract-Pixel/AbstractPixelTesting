@@ -14,7 +14,7 @@ namespace Game_Manager.GameBehaviors
         public PauseBehavior( BaseGameBehaviorConfigSO _behaviourConfigSO) : base( _behaviourConfigSO)
         {
             config = _behaviourConfigSO as PauseBehaviorConfigSO;
-            eventType = GameStateEvent.OnPaused;
+            EventType = GameStateEvent.OnPaused;
         }
 
         public override void Exit()

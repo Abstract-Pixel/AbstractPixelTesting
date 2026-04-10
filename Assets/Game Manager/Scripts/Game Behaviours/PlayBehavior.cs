@@ -9,7 +9,7 @@ namespace Game_Manager.GameBehaviors
     {
         public PlayBehavior(BaseGameBehaviorConfigSO _behaviorConfigSO): base(_behaviorConfigSO)
         {
-            eventType = GameStateEvent.OnPlay;
+            EventType = GameStateEvent.OnPlay;
         }
     }
 }

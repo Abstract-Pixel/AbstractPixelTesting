@@ -7,7 +7,7 @@ namespace Game_Manager.Conditions
     {
         public WinBehavior(BaseGameBehaviorConfigSO _behaviorConfigSO) : base( _behaviorConfigSO)
         {
-            eventType = GameStateEvent.OnWin;
+            EventType = GameStateEvent.OnWin;
         }
     }
 }

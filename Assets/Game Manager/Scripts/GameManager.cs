@@ -51,7 +51,7 @@ namespace Game_Manager
             HashSet<GameStateEvent> persistentEvents = new HashSet<GameStateEvent>();
             foreach (var behavior in gameBehaviors)
             {
-                persistentEvents.Add(behavior.eventType);
+                persistentEvents.Add(behavior.EventType);
             }
             GameManagerEventBus.RegisterStateEvents(persistentEvents);
 

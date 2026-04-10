@@ -299,11 +299,11 @@ MonoBehaviour:
   lastKnownGlobalObjectID: GlobalObjectId_V1-2-99c9720ab356a0642a771bea13969a05-1561839627-0
   lastKnownGameObjectName: gazo
   savableTargets:
-  - InpsectorName: LameoSon
+  - InspectorName: LameoSon
     Script: {fileID: 1561839624}
     Identification:
       ClassName: LameoSon
-      GUID: 1df2f929-8aab-466b-961f-abf6e3b0718c
+      GUID: c41ca596-1f66-44bc-9501-e37f63f2b99d
 --- !u!1 &1586333314
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +353,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1839446447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839446449}
+  - component: {fileID: 1839446448}
+  m_Layer: 0
+  m_Name: scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1839446448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839446447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb677d7d884ea14da9085c8c265957d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scenetest
+  haloMotoScene:
+    sceneName: 
+    sceneAsset: {fileID: 0}
+--- !u!4 &1839446449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839446447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -720.9105, y: 0, z: -572.00696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -361,3 +408,4 @@ SceneRoots:
   - {fileID: 1561839625}
   - {fileID: 1342621203}
   - {fileID: 1586333316}
+  - {fileID: 1839446449}

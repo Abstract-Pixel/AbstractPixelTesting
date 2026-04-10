@@ -6,7 +6,6 @@ using Game_Manager.Configuration;
 
 namespace Game_Manager
 {
-
     [System.Serializable]
     public abstract class GameBehaviorBase : IGameBehavior
     {
@@ -14,7 +13,7 @@ namespace Game_Manager
         [SerializeField] protected BaseGameBehaviorConfigSO behaviorConfigSO;
 
         [HideInInspector][SerializeField] protected bool isInitialEnter = true;
-        [field: SerializeField][HideInInspector] public GameStateEvent eventType { get; protected set; }
+        [field: SerializeField][HideInInspector] public GameStateEvent EventType { get; protected set; }
         [field: SerializeField][HideInInspector] public GameStateEvent InGameUIEventType { get; protected set; }
         public BaseGameBehaviorConfigSO BehaviorConfigSO => behaviorConfigSO;
 
@@ -71,7 +70,7 @@ namespace Game_Manager
                 HandleSceneLoading(behaviorConfigSO.SceneLoadTypeOnExecution);       
             }
             isInitialEnter = false;
-            GameManagerEventBus.Raise(eventType);
+            GameManagerEventBus.Raise(EventType);
             GameManagerEventBus.Raise(InGameUIEventType);
         }
 

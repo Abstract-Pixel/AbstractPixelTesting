@@ -8,7 +8,7 @@ namespace Game_Manager.Conditions
     {
         public LoseBehavior(BaseGameBehaviorConfigSO _behaviorConfigSO) : base(_behaviorConfigSO)
         {
-            eventType = GameStateEvent.OnLose;
+            EventType = GameStateEvent.OnLose;
         }
     }
 }
