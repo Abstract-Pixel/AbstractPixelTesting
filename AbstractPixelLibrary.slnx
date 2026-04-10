@@ -1,4 +1,5 @@
 ﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="CustomInspector.Documentation.Editor.csproj" />
   <Project Path="CustomInspector.csproj" />
   <Project Path="CustomInspector.Helpers.Editor.csproj" />
@@ -9,5 +10,4 @@
   <Project Path="AbstractPixel.Core.Editor.csproj" />
   <Project Path="CustomInspector.Demo.csproj" />
   <Project Path="AbstractPixel.SaveSystem.Editor.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
 </Solution>
