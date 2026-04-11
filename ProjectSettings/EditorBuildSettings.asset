@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Manager/Game Manager Prefabs/GameBehaviorScenes/PlayScene 1.unity
     guid: 647b6c43413f3af4096c29d037ae62a4
+  - enabled: 1
+    path: Assets/Game Manager/Game Manager Prefabs/GameBehaviorScenes/PlayScene 2.unity
+    guid: 1a31a134037b68e4fb32b82bb9ad44cd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

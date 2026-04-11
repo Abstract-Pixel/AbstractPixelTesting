@@ -264,8 +264,7 @@ namespace Game_Manager
             if (CurrentBehavior.GetType() == BehaviorSceneContext.TargetBehaviorType)
             {
                 appropriateSceneReference = BehaviorSceneContext.TargetSceneReference;
-            } 
-            BehaviorSceneContext.ClearContext();
+            }  
             CurrentBehavior.Enter(appropriateSceneReference);
             GameManagerEventBus.Raise(GameStateEvent.OnStateChanged);
         }
