@@ -12,10 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9101a8b500a2fe49a943ad994b72cc7, type: 3}
   m_Name: StartBehaviourConfigSO
   m_EditorClassIdentifier: 
-  BehaviorType: 0
   IsTimeZeroOnExecution: 1
   IsCursorLockedOnExecution: 0
   IsCursorVisibleOnExecution: 1
   ShowGameUIOnExecution: 0
   SceneLoadTypeOnExecution: 1
-  SceneToLoad: 0
+  DefaultScene:
+    <SceneFieldReference>k__BackingField:
+      sceneName: StartScene
+      sceneAsset: {fileID: 102900000, guid: 5d81b4ec0865b7645825c2226265ea07, type: 3}
+    <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  ValidScenes:
+  - <SceneFieldReference>k__BackingField:
+      sceneName: StartScene
+      sceneAsset: {fileID: 102900000, guid: 5d81b4ec0865b7645825c2226265ea07, type: 3}
+    <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0

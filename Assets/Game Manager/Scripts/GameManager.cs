@@ -10,11 +10,13 @@ using UnityEngine.SceneManagement;
 
 namespace Game_Manager
 {
+    [DisallowMultipleComponent]
     [AddComponentMenu("Game Manager System/Game Manager")]
-    public class GameManager : MonoBehaviour
+    public sealed class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
         public IGameBehavior CurrentBehavior { get; private set; }
+        public GameBehaviorSceneContext BehaviorSceneContext { get; private set; }
 
         [Header("References")]
         [SerializeField] GameManagerConfigSO gameManagerConfigSo;
@@ -26,8 +28,8 @@ namespace Game_Manager
         private Dictionary<Type, GameBehaviorBase> behaviorsByType = new();
         private Dictionary<BaseGameBehaviorConfigSO, GameBehaviorBase> behaviorsByConfig = new();
 
-        List<IPollableCondition> pollableConditions = new();
-        GameBehaviorBase pendingBehaviorToExecuteOnRestart;
+        private List<IPollableCondition> pollableConditions = new();
+        private GameBehaviorBase pendingBehaviorToExecuteOnRestart;
 
 
         #region Game Manager Intialization
@@ -62,6 +64,7 @@ namespace Game_Manager
             ResetAllBehaviors();
             InitializeGameConditions();
             GameBehaviorBase initialBehavior = FindInitialBehavior();
+            BehaviorSceneContext = new GameBehaviorSceneContext();
             TransitionTo(initialBehavior);
         }
 
@@ -69,7 +72,7 @@ namespace Game_Manager
         {
             // Skip validation in editor mode to avoid unnecessary warnings.
             if (Application.isPlaying) return;
-           
+
             if (gameManagerConfigSo == null)
             {
                 Debug.LogWarning("No Game Manager Config found on GameManager. Please assign one.");
@@ -84,7 +87,7 @@ namespace Game_Manager
             PopulateBehaviorDictionaries();
             gameConditions = gameManagerConfigSo.CreateAllGameConditions();
         }
-        
+
 
         private void PopulateBehaviorDictionaries()
         {
@@ -136,11 +139,11 @@ namespace Game_Manager
                 return GetBehavior<StartBehavior>();
             }
 
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            string currentSceneName = SceneManager.GetActiveScene().name;
 
             foreach (GameBehaviorBase behavior in gameBehaviors)
             {
-                bool doesBehaviorOwnScene = behavior.BehaviorConfigSO.SceneToLoad == currentSceneIndex &&
+                bool doesBehaviorOwnScene = behavior.BehaviorConfigSO.IsSceneValid(currentSceneName) &&
                                             behavior.BehaviorConfigSO.SceneLoadTypeOnExecution != SceneLoadType.NoSceneLoad;
                 if (doesBehaviorOwnScene)
                 {
@@ -192,12 +195,13 @@ namespace Game_Manager
             if (sceneLoadType == SceneLoadType.NoSceneLoad)
             {
                 // We still skip its "scene loading" because this is a manual override.
-                TransitionTo(targetBehavior, true);
+                TransitionTo(targetBehavior);
                 return;
             }
             // Set the pending flag and load the scene. The callback will handle the rest.
             pendingBehaviorToExecuteOnRestart = targetBehavior;
-            SceneManager.LoadScene(targetBehavior.BehaviorConfigSO.SceneToLoad);
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
         }
 
         void InitializationOnSceneLoaded(Scene scene, LoadSceneMode loadType)
@@ -205,7 +209,8 @@ namespace Game_Manager
             InitializeGameConditions();
             if (pendingBehaviorToExecuteOnRestart != null)
             {
-                TransitionTo(pendingBehaviorToExecuteOnRestart, true);
+                BehaviorSceneContext.ClearContext();
+                TransitionTo(pendingBehaviorToExecuteOnRestart);
                 pendingBehaviorToExecuteOnRestart = null;
             }
         }
@@ -237,12 +242,12 @@ namespace Game_Manager
             return null;
         }
 
-        private void TransitionToType<T>(bool skipSceneLoading = false) where T : GameBehaviorBase
+        private void TransitionToType<T>(SceneReference sceneReference = null) where T : GameBehaviorBase
         {
-            TransitionTo(GetBehavior<T>(), skipSceneLoading);
+            TransitionTo(GetBehavior<T>(), sceneReference);
         }
 
-        private void TransitionTo(GameBehaviorBase behavior, bool skipSceneLoading = false)
+        private void TransitionTo(GameBehaviorBase behavior, SceneReference sceneReference = null)
         {
             if (behavior == null)
             {
@@ -250,9 +255,18 @@ namespace Game_Manager
                 return;
             }
 
-            if (CurrentBehavior != null) { CurrentBehavior.Exit(); }
+            if (CurrentBehavior != null)
+            {
+                CurrentBehavior.Exit();
+            }
             CurrentBehavior = behavior;
-            CurrentBehavior.Enter(skipSceneLoading);
+            SceneReference appropriateSceneReference = null;
+            if (CurrentBehavior.GetType() == BehaviorSceneContext.TargetBehaviorType)
+            {
+                appropriateSceneReference = BehaviorSceneContext.TargetSceneReference;
+            } 
+            BehaviorSceneContext.ClearContext();
+            CurrentBehavior.Enter(appropriateSceneReference);
             GameManagerEventBus.Raise(GameStateEvent.OnStateChanged);
         }
 
@@ -306,6 +320,10 @@ namespace Game_Manager
             GameManagerEventBus.Unsubscribe(GameRequestEvent.RequestLoseGame, LoseGame);
             GameManagerEventBus.Unsubscribe(GameRequestEvent.RequestRestartGame, RestartGame);
             GameManagerEventBus.Unsubscribe(GameRequestEvent.RequestQuitGame, QuitGame);
+            foreach (GameCondition condition in gameConditions)
+            {
+                condition.CleanUp();
+            }
         }
         #endregion
     }

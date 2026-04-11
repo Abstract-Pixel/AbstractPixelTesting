@@ -1,5 +1,7 @@
 using AbstractPixel.Core;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Booyah : MonoBehaviour
 {
@@ -7,8 +9,7 @@ public class Booyah : MonoBehaviour
     private int exampleField;
     [SerializeField, ReadOnly(true)]
     private Leaderboard leaderboard;
-    [SerializeField, ReadOnly(true)]
-    bool istesting = false;
+
 }
 
 

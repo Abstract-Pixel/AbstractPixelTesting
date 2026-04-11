@@ -12,10 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204ff921385566b49bd9a79dd71c03f8, type: 3}
   m_Name: PauseBehaviorConfig
   m_EditorClassIdentifier: 
-  BehaviorType: 2
   IsTimeZeroOnExecution: 1
   IsCursorLockedOnExecution: 0
   IsCursorVisibleOnExecution: 1
-  LoadSceneOnExecution: 0
-  SceneToLoad: 0
-  PauseKey: 27
+  ShowGameUIOnExecution: 0
+  SceneLoadTypeOnExecution: 0
+  DefaultScene:
+    <SceneFieldReference>k__BackingField:
+      sceneName: 
+      sceneAsset: {fileID: 0}
+    <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  ValidScenes: []
+  InputMapActionAsset: {fileID: -944628639613478452, guid: 2969c4c9a7a6f9842b720c2547e5c303, type: 3}
+  InputActionName: GameActionMap/GamePause

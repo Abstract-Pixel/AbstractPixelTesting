@@ -1,6 +1,7 @@
-using UnityEngine;
 using Game_Manager.Configuration;
 using Game_Manager.Events;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Game_Manager.Conditions
 {
@@ -12,10 +13,11 @@ namespace Game_Manager.Conditions
     /// Instead try getting the references 
     /// </summary>
     [System.Serializable]
-    public class PauseCondition : GameCondition,IPollableCondition
+    public class PauseCondition : GameCondition
     {
         [HideInInspector][SerializeField] PauseBehaviorConfigSO pauseConfig;
         [SerializeField][HideInInspector] bool isPaused = false;
+        InputAction pauseAction;
 
         public PauseCondition(BaseGameBehaviorConfigSO _pauseConfig) : base(_pauseConfig)
         {
@@ -28,22 +30,27 @@ namespace Game_Manager.Conditions
         {
             GameManagerEventBus.Subscribe(GameStateEvent.OnPaused, EnablePause);
             GameManagerEventBus.Subscribe(GameStateEvent.OnUnPaused, DisablePause);
-        }
-
-        public void OnUpdate()
-        {
-            bool onInputPressed = Input.GetKeyDown(pauseConfig.PauseKey) || Input.GetKeyDown(pauseConfig.ControllerPauseKey);
-
-            if (onInputPressed)
+            pauseAction = pauseConfig.InputMapActionAsset.FindAction(pauseConfig.InputActionName);
+            if (pauseAction == null)
             {
-                TriggerGameConditionMet();
+                Debug.Log("[PauseCondition] pauseInputAction is null");
+                return;
             }
+
+            pauseAction.Enable();
+            pauseAction.performed += OnPausePerformed;
+
         }
 
+        void OnPausePerformed(InputAction.CallbackContext context)
+        {
+            HandleOnGameConditionMet();
+        }
         protected override void HandleOnGameConditionMet()
         {
             isPaused = !isPaused;
             requestEventType = isPaused ? GameRequestEvent.RequestPauseGame : GameRequestEvent.RequestUnPauseGame;
+            GameManagerEventBus.Raise(requestEventType);
         }
 
         void DisablePause() => isPaused = false;
@@ -53,6 +60,11 @@ namespace Game_Manager.Conditions
         {
             GameManagerEventBus.Unsubscribe(GameStateEvent.OnPaused, EnablePause);
             GameManagerEventBus.Unsubscribe(GameStateEvent.OnUnPaused, DisablePause);
+            if (pauseAction != null)
+            {
+                pauseAction.performed -= OnPausePerformed;
+                pauseAction.Disable();
+            }
         }
     }
 }

@@ -24,10 +24,10 @@ namespace Game_Manager
             isInitialEnter = true;
         }
 
-        public void Enter(bool skipSceneLoading = false)
+        public void Enter(SceneReference sceneReference)
         {
             OnEnter();
-            ApplyBaseSettings(skipSceneLoading);
+            ApplyBaseSettings(sceneReference);
         }
 
         /// <summary>
@@ -53,22 +53,18 @@ namespace Game_Manager
         /// resetting the state, then it needs to be overridden in the derived class
         protected virtual void OnReset() { }
 
-        private void ApplyBaseSettings(bool skipSceneLoading)
+        private void ApplyBaseSettings(SceneReference sceneReference)
         {
             if (behaviorConfigSO == null)
             {
                 Debug.LogError("Config So is not assigned to this Game Manager Behavior.Please assign it in the Inspector.");
-
             }
             //Debug.Log("Executing " + GetType().ToString());
             SetTimescale(behaviorConfigSO.IsTimeZeroOnExecution ? 0f : 1f);
             SetCursorLockMode(behaviorConfigSO.IsCursorLockedOnExecution);
             SetCursorVisible(behaviorConfigSO.IsCursorVisibleOnExecution);
             SetInGameUiEventType();
-            if (!skipSceneLoading)
-            {
-                HandleSceneLoading(behaviorConfigSO.SceneLoadTypeOnExecution);       
-            }
+            HandleSceneLoading(behaviorConfigSO.SceneLoadTypeOnExecution,sceneReference);
             isInitialEnter = false;
             GameManagerEventBus.Raise(EventType);
             GameManagerEventBus.Raise(InGameUIEventType);
@@ -108,30 +104,59 @@ namespace Game_Manager
             Cursor.visible = visible;
         }
 
-        protected void HandleSceneLoading(SceneLoadType loadType)
+        protected void HandleSceneLoading(SceneLoadType loadType, SceneReference sceneReference)
         {
+            string currentScene = SceneManager.GetActiveScene().name;
+            bool isSceneLoadingNotAllowed = loadType == SceneLoadType.NoSceneLoad;
+            if (isSceneLoadingNotAllowed)
+            {
+                return;
+            }
+            bool isCurrentActiveSceneValid = behaviorConfigSO.IsSceneValid(currentScene);
+            if (sceneReference == null || sceneReference.SceneAssetReference == null || sceneReference.SceneFieldReference == null)
+            {                
+                if(!isCurrentActiveSceneValid)
+                {
+                    LoadScene(behaviorConfigSO.DefaultScene.SceneName);
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (!behaviorConfigSO.IsSceneValid(sceneReference))
+            {
+                LoadScene(behaviorConfigSO.DefaultScene.SceneName);
+            }
             switch (loadType)
             {
                 case SceneLoadType.NoSceneLoad:
                     break;
                 case SceneLoadType.LoadSceneOnce:
                     if (!isInitialEnter) break;
-                    LoadScene(behaviorConfigSO.SceneToLoad);
+                    LoadScene(behaviorConfigSO.DefaultScene.SceneName);
                     break;
                 case SceneLoadType.LoadSceneAlways:
-                    LoadScene(behaviorConfigSO.SceneToLoad);
+                    LoadScene(sceneReference.SceneName);
                     break;
             }
         }
 
-        void LoadScene(int sceneIndex)
+        void LoadScene(string sceneName)
         {
-            if (sceneIndex == SceneManager.GetActiveScene().buildIndex)
+            if (string.IsNullOrEmpty(sceneName))
             {
-                Debug.LogWarning("Trying to load the same scene again. Please check the scene index.");
+                Debug.LogError("Scene name is null or empty. Please check the scene reference for this behavior.");
                 return;
             }
-            SceneManager.LoadScene(sceneIndex);
+            if (sceneName == SceneManager.GetActiveScene().name)
+            {
+                Debug.LogWarning("Trying to load the same scene again. Please check the scene name.");
+                return;
+            }
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

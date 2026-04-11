@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IGameBehavior
 {
-    public void Enter(bool skipSceneLoading = false);
+    public void Enter(SceneReference _sceneReference);
 
     public virtual void OnUpdate()
     {

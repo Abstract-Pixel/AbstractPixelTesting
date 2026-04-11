@@ -1,0 +1,68 @@
+{
+    "version": 1,
+    "name": "GameManagerInputtActions",
+    "maps": [
+        {
+            "name": "GameActionMap",
+            "id": "b6d10b27-491f-4af0-a2d5-a5697fc1fcbb",
+            "actions": [
+                {
+                    "name": "GamePause",
+                    "type": "Button",
+                    "id": "900b9a37-6c98-4fce-adbe-0cf4f69a64ee",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "476ce9be-59b8-45d9-8711-87d1cc77eeec",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GameManagerControlScheme",
+                    "action": "GamePause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8e9cd07-e897-48ea-8032-9a8847bd6440",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GamePause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "GameManagerControlScheme",
+            "bindingGroup": "GameManagerControlScheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

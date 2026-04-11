@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Game Manager/Game Manager Prefabs/GameBehaviorScenes/StartScene.unity
+    guid: 5d81b4ec0865b7645825c2226265ea07
+  - enabled: 1
+    path: Assets/Game Manager/Game Manager Prefabs/GameBehaviorScenes/PlayScene.unity
+    guid: a5bed4c6d1bd7ec47b082bdf85edecd9
+  - enabled: 1
+    path: Assets/Game Manager/Game Manager Prefabs/GameBehaviorScenes/PlayScene 1.unity
+    guid: 647b6c43413f3af4096c29d037ae62a4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
