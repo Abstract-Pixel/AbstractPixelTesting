@@ -1,8 +1,8 @@
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager.Conditions;
 using UnityEngine;
-using Game_Manager.GameBehaviors;
+using AbstractPixel.GameManager.GameBehaviors;
 
-namespace Game_Manager.Configuration
+namespace AbstractPixel.GameManager.Configuration
 {
     [CreateAssetMenu(fileName = "PlayBehaviorConfig", menuName = "Game Manager/Behavior Configs/Play Behavior Config", order = 4)]
     public class PlayBehaviorConfigSO : BaseGameBehaviorConfigSO

@@ -1,5 +1,5 @@
-using Game_Manager;
-using Game_Manager.GameBehaviors;
+using AbstractPixel.GameManager;
+using AbstractPixel.GameManager.GameBehaviors;
 using UnityEngine;
 
 public class GameManagerTesting : MonoBehaviour

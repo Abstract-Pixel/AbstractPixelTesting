@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Game_Manager.Events
+namespace AbstractPixel.GameManager.Events
 {
 
     public static class GameManagerEventBus

@@ -1,9 +1,9 @@
-﻿using Game_Manager;
+﻿using AbstractPixel.GameManager;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game_Manager.Events
+namespace AbstractPixel.GameManager.Events
 {
     [AddComponentMenu("Game Manager System/Events/SingleGameStateListener")]
     public class SingleGameStateListener : MonoBehaviour

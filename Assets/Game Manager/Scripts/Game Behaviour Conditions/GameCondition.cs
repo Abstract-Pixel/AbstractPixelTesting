@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using Game_Manager.Events;
-using Game_Manager.Configuration;
+using AbstractPixel.GameManager.Events;
+using AbstractPixel.GameManager.Configuration;
 
-namespace Game_Manager.Conditions
+namespace AbstractPixel.GameManager.Conditions
 {
     /// <summary>
     /// References cannot be dragged in inspector 

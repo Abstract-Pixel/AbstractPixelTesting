@@ -1,9 +1,9 @@
-using Game_Manager;
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager;
+using AbstractPixel.GameManager.Conditions;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game_Manager.Configuration
+namespace AbstractPixel.GameManager.Configuration
 {
     public abstract class BaseGameBehaviorConfigSO : ScriptableObject
     {
@@ -61,7 +61,7 @@ namespace Game_Manager.Configuration
                     return true;
                 }
             }
-            Debug.LogWarning($"Scene '{sceneName}' is not valid for behavior '{BehaviorName}'.");
+            //Debug.LogWarning($"Scene '{sceneName}' is not valid for behavior '{BehaviorName}'.");
             return false;
 
         }

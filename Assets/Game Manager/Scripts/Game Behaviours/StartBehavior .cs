@@ -1,6 +1,6 @@
-using Game_Manager.Configuration;
+using AbstractPixel.GameManager.Configuration;
 
-namespace Game_Manager.GameBehaviors
+namespace AbstractPixel.GameManager.GameBehaviors
 {
     [System.Serializable]
     public class StartBehavior : GameBehaviorBase

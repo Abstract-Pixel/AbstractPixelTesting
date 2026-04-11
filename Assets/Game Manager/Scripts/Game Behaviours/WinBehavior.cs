@@ -1,6 +1,6 @@
-using Game_Manager.Configuration;
+using AbstractPixel.GameManager.Configuration;
 
-namespace Game_Manager.Conditions
+namespace AbstractPixel.GameManager.Conditions
 {
     [System.Serializable]
     public class WinBehavior : GameBehaviorBase

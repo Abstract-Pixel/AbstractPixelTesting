@@ -1,9 +1,9 @@
-using Game_Manager.Events;
+using AbstractPixel.GameManager.Events;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-namespace Game_Manager.UI
+namespace AbstractPixel.GameManager.UI
 {
    
     [AddComponentMenu("Game Manager System/UI/PrimaryMenusUIManager")]

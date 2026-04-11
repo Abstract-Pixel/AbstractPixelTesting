@@ -1,4 +1,4 @@
-namespace Game_Manager.Conditions
+namespace AbstractPixel.GameManager.Conditions
 {
     public interface IPollableCondition
     {

@@ -1,8 +1,8 @@
-using Game_Manager;
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager;
+using AbstractPixel.GameManager.Conditions;
 using UnityEngine;
 
-namespace Game_Manager.Configuration
+namespace AbstractPixel.GameManager.Configuration
 {
     [CreateAssetMenu(fileName = "WinBehaviorConfigSO", menuName = "Game Manager/Behavior Configs/Win Behavior Config", order = 5)]
     public class WinBehaviorConfigSO : BaseGameBehaviorConfigSO

@@ -1,14 +1,14 @@
 using System;
-using Game_Manager.Configuration;
-using Game_Manager.GameBehaviors;
-using Game_Manager.Conditions;
-using Game_Manager.Events;
+using AbstractPixel.GameManager.Configuration;
+using AbstractPixel.GameManager.GameBehaviors;
+using AbstractPixel.GameManager.Conditions;
+using AbstractPixel.GameManager.Events;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-namespace Game_Manager
+namespace AbstractPixel.GameManager
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Game Manager System/Game Manager")]

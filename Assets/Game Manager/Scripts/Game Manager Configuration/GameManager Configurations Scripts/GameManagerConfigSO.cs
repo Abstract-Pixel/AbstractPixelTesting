@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager.Conditions;
 
-namespace Game_Manager.Configuration
+namespace AbstractPixel.GameManager.Configuration
 {
     [CreateAssetMenu(fileName = "GameManagerConfig", menuName = "Game Manager/Game Manager Config", order = 0)]
     public class GameManagerConfigSO : ScriptableObject

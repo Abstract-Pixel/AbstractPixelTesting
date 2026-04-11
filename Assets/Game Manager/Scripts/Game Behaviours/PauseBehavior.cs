@@ -1,9 +1,9 @@
 using UnityEngine;
-using Game_Manager.Configuration;
-using Game_Manager.Events;
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager.Configuration;
+using AbstractPixel.GameManager.Events;
+using AbstractPixel.GameManager.Conditions;
 
-namespace Game_Manager.GameBehaviors
+namespace AbstractPixel.GameManager.GameBehaviors
 {
     [System.Serializable]
     public class PauseBehavior : GameBehaviorBase

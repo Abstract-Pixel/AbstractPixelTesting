@@ -1,10 +1,10 @@
 using UnityEngine;
-using Game_Manager.Events;
+using AbstractPixel.GameManager.Events;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Audio;
 
-namespace Game_Manager
+namespace AbstractPixel.GameManager
 {
     [AddComponentMenu("Game Manager System/GameStateAudioController")]
     public class GameStateAudioController : MonoBehaviour

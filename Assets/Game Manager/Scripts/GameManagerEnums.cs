@@ -1,5 +1,5 @@
 
-namespace Game_Manager
+namespace AbstractPixel.GameManager
 {
 
     /// <summary>

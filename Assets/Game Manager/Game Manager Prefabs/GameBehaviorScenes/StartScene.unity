@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &18373076
+--- !u!1001 &267675801
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,839 +129,239 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameBehaviors.Array.data[0]'
-      value: 986330365237134131
+      value: 986330366132617280
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameBehaviors.Array.data[1]'
-      value: 986330365237134132
+      value: 986330366132617281
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameBehaviors.Array.data[2]'
-      value: 986330365237134133
+      value: 986330366132617282
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameBehaviors.Array.data[3]'
-      value: 986330365237134134
+      value: 986330366132617283
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameBehaviors.Array.data[4]'
-      value: 986330365237134135
+      value: 986330366132617284
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameConditions.Array.data[0]'
-      value: 986330365237134136
+      value: 986330366132617285
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameConditions.Array.data[1]'
-      value: 986330365237134137
+      value: 986330366132617286
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: 'gameConditions.Array.data[2]'
-      value: 986330365237134138
+      value: 986330366132617287
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134075]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.StartBehavior
+      propertyPath: 'managedReferences[986330366132617280]'
+      value: Assembly-CSharp AbstractPixel.GameManager.GameBehaviors.StartBehavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134076]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PlayBehavior
+      propertyPath: 'managedReferences[986330366132617281]'
+      value: Assembly-CSharp AbstractPixel.GameManager.GameBehaviors.PlayBehavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134077]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PauseBehavior
+      propertyPath: 'managedReferences[986330366132617282]'
+      value: Assembly-CSharp AbstractPixel.GameManager.GameBehaviors.PauseBehavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134078]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinBehavior
+      propertyPath: 'managedReferences[986330366132617283]'
+      value: Assembly-CSharp AbstractPixel.GameManager.Conditions.WinBehavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134079]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseBehavior
+      propertyPath: 'managedReferences[986330366132617284]'
+      value: Assembly-CSharp AbstractPixel.GameManager.GameBehaviors.LoseBehavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134080]'
-      value: Assembly-CSharp Game_Manager.Conditions.PauseCondition
+      propertyPath: 'managedReferences[986330366132617285]'
+      value: Assembly-CSharp AbstractPixel.GameManager.Conditions.PauseCondition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134081]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinCondition
+      propertyPath: 'managedReferences[986330366132617286]'
+      value: Assembly-CSharp AbstractPixel.GameManager.Conditions.WinCondition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134082]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseCondition
+      propertyPath: 'managedReferences[986330366132617287]'
+      value: Assembly-CSharp AbstractPixel.GameManager.Conditions.LoseCondition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134099]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.StartBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134100]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PlayBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134101]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PauseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134102]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134103]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134104]'
-      value: Assembly-CSharp Game_Manager.Conditions.PauseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134105]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134106]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134115]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.StartBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134116]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PlayBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134117]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PauseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134118]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134119]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134120]'
-      value: Assembly-CSharp Game_Manager.Conditions.PauseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134121]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134122]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134131]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.StartBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134132]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PlayBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134133]'
-      value: Assembly-CSharp Game_Manager.GameBehaviors.PauseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134134]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134135]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseBehavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134136]'
-      value: Assembly-CSharp Game_Manager.Conditions.PauseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134137]'
-      value: Assembly-CSharp Game_Manager.Conditions.WinCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: 'managedReferences[986330365237134138]'
-      value: Assembly-CSharp Game_Manager.Conditions.LoseCondition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].config
+      propertyPath: managedReferences[986330366132617282].config
       value: 
       objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].config
+      propertyPath: managedReferences[986330366132617285].configSO
       value: 
       objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].config
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].config
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134080].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134080].isPaused
+      propertyPath: managedReferences[986330366132617285].isPaused
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134081].configSO
+      propertyPath: managedReferences[986330366132617286].configSO
       value: 
       objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134082].configSO
+      propertyPath: managedReferences[986330366132617287].configSO
       value: 
       objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134104].configSO
+      propertyPath: managedReferences[986330366132617285].pauseConfig
       value: 
       objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134104].isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134105].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134106].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134120].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134120].isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134121].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134122].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134136].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134136].isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134137].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134138].configSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134080].pauseConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134104].pauseConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134120].pauseConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134136].pauseConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134075].behaviorName
+      propertyPath: managedReferences[986330366132617280].behaviorName
       value: Start Behavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134076].behaviorName
+      propertyPath: managedReferences[986330366132617281].behaviorName
       value: Play Behavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].behaviorName
+      propertyPath: managedReferences[986330366132617282].behaviorName
       value: Pause Behavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134078].behaviorName
+      propertyPath: managedReferences[986330366132617283].behaviorName
       value: Win Behavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134079].behaviorName
+      propertyPath: managedReferences[986330366132617284].behaviorName
       value: Lose Behavior
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134099].behaviorName
-      value: Start Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134100].behaviorName
-      value: Play Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].behaviorName
-      value: Pause Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134102].behaviorName
-      value: Win Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134103].behaviorName
-      value: Lose Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134115].behaviorName
-      value: Start Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134116].behaviorName
-      value: Play Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].behaviorName
-      value: Pause Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134118].behaviorName
-      value: Win Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134119].behaviorName
-      value: Lose Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134131].behaviorName
-      value: Start Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134132].behaviorName
-      value: Play Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].behaviorName
-      value: Pause Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134134].behaviorName
-      value: Win Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134135].behaviorName
-      value: Lose Behavior
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134080].conditionName
+      propertyPath: managedReferences[986330366132617285].conditionName
       value: Pause Condition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134081].conditionName
+      propertyPath: managedReferences[986330366132617286].conditionName
       value: Win Condition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134082].conditionName
+      propertyPath: managedReferences[986330366132617287].conditionName
       value: Lose Condition
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134104].conditionName
-      value: Pause Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134105].conditionName
-      value: Win Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134106].conditionName
-      value: Lose Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134120].conditionName
-      value: Pause Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134121].conditionName
-      value: Win Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134122].conditionName
-      value: Lose Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134136].conditionName
-      value: Pause Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134137].conditionName
-      value: Win Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134138].conditionName
-      value: Lose Condition
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134075].isInitialEnter
+      propertyPath: managedReferences[986330366132617280].isInitialEnter
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134076].isInitialEnter
+      propertyPath: managedReferences[986330366132617281].isInitialEnter
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].isInitialEnter
+      propertyPath: managedReferences[986330366132617282].isInitialEnter
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134078].isInitialEnter
+      propertyPath: managedReferences[986330366132617283].isInitialEnter
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134079].isInitialEnter
+      propertyPath: managedReferences[986330366132617284].isInitialEnter
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134099].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134100].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134102].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134103].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134115].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134116].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134118].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134119].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134131].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134132].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134134].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134135].isInitialEnter
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134075].behaviorConfigSO
+      propertyPath: managedReferences[986330366132617280].behaviorConfigSO
       value: 
       objectReference: {fileID: 11400000, guid: 60ecb6fc2715ab448a854112fcce31e8, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134076].behaviorConfigSO
+      propertyPath: managedReferences[986330366132617281].behaviorConfigSO
       value: 
       objectReference: {fileID: 11400000, guid: 72dd10351ad9b2a41a0482ddc9840881, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].behaviorConfigSO
+      propertyPath: managedReferences[986330366132617282].behaviorConfigSO
       value: 
       objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134078].behaviorConfigSO
+      propertyPath: managedReferences[986330366132617283].behaviorConfigSO
       value: 
       objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134079].behaviorConfigSO
+      propertyPath: managedReferences[986330366132617284].behaviorConfigSO
       value: 
       objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134080].requestEventType
+      propertyPath: managedReferences[986330366132617285].requestEventType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134081].requestEventType
+      propertyPath: managedReferences[986330366132617286].requestEventType
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134082].requestEventType
+      propertyPath: managedReferences[986330366132617287].requestEventType
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134099].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 60ecb6fc2715ab448a854112fcce31e8, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134100].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 72dd10351ad9b2a41a0482ddc9840881, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134102].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134103].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134104].requestEventType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134105].requestEventType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134106].requestEventType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134115].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 60ecb6fc2715ab448a854112fcce31e8, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134116].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 72dd10351ad9b2a41a0482ddc9840881, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134118].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134119].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134120].requestEventType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134121].requestEventType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134122].requestEventType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134131].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 60ecb6fc2715ab448a854112fcce31e8, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134132].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 72dd10351ad9b2a41a0482ddc9840881, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 2a6c47141911eab44b0bd85e9ae9583b, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134134].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 8bb5203fd1265c741987ea60de2e1d55, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134135].behaviorConfigSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 1de6589cfe79f7546aa7bac890aeb8f2, type: 2}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134136].requestEventType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134137].requestEventType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134138].requestEventType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].pauseCondition.configSO
+      propertyPath: managedReferences[986330366132617282].pauseCondition.configSO
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].pauseCondition.isPaused
+      propertyPath: managedReferences[986330366132617282].pauseCondition.isPaused
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].pauseCondition.configSO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].pauseCondition.isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].pauseCondition.configSO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].pauseCondition.isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].pauseCondition.configSO
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].pauseCondition.isPaused
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134075].<EventType>k__BackingField
+      propertyPath: managedReferences[986330366132617280].<EventType>k__BackingField
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134076].<EventType>k__BackingField
+      propertyPath: managedReferences[986330366132617281].<EventType>k__BackingField
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].<EventType>k__BackingField
+      propertyPath: managedReferences[986330366132617282].<EventType>k__BackingField
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].pauseCondition.pauseConfig
+      propertyPath: managedReferences[986330366132617282].pauseCondition.pauseConfig
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134078].<EventType>k__BackingField
+      propertyPath: managedReferences[986330366132617283].<EventType>k__BackingField
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134079].<EventType>k__BackingField
+      propertyPath: managedReferences[986330366132617284].<EventType>k__BackingField
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134099].<EventType>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134100].<EventType>k__BackingField
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].<EventType>k__BackingField
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].pauseCondition.pauseConfig
+      propertyPath: managedReferences[986330366132617282].pauseCondition.conditionName
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134102].<EventType>k__BackingField
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134103].<EventType>k__BackingField
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134115].<EventType>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134116].<EventType>k__BackingField
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].<EventType>k__BackingField
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].pauseCondition.pauseConfig
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134118].<EventType>k__BackingField
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134119].<EventType>k__BackingField
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134131].<EventType>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134132].<EventType>k__BackingField
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].<EventType>k__BackingField
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].pauseCondition.pauseConfig
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134134].<EventType>k__BackingField
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134135].<EventType>k__BackingField
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].pauseCondition.conditionName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].pauseCondition.conditionName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].pauseCondition.conditionName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].pauseCondition.conditionName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].pauseCondition.requestEventType
+      propertyPath: managedReferences[986330366132617282].pauseCondition.requestEventType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].pauseCondition.requestEventType
+      propertyPath: managedReferences[986330366132617280].<InGameUIEventType>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].pauseCondition.requestEventType
+      propertyPath: managedReferences[986330366132617281].<InGameUIEventType>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].pauseCondition.requestEventType
+      propertyPath: managedReferences[986330366132617282].<InGameUIEventType>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134075].<InGameUIEventType>k__BackingField
+      propertyPath: managedReferences[986330366132617283].<InGameUIEventType>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134076].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134077].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134078].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134079].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134099].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134100].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134101].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134102].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134103].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134115].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134116].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134117].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134118].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134119].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134131].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134132].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134133].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134134].<InGameUIEventType>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569186193949784796, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
-      propertyPath: managedReferences[986330365237134135].<InGameUIEventType>k__BackingField
+      propertyPath: managedReferences[986330366132617284].<InGameUIEventType>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7801949380260666253, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 541.03204
+      value: 660.87335
       objectReference: {fileID: 0}
     - target: {fileID: 7801949380260666253, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -969,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7801949380260666253, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2880.6787
+      value: 2137.4714
       objectReference: {fileID: 0}
     - target: {fileID: 7801949380260666253, guid: f5e08aab649605046956f9f0ac275c78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1327,5 +727,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1076004150}
   - {fileID: 1079290555}
-  - {fileID: 18373076}
   - {fileID: 1144001023}
+  - {fileID: 267675801}

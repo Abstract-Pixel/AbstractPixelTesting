@@ -1,10 +1,10 @@
-using Game_Manager.Events;
+using AbstractPixel.GameManager.Events;
 using UnityEngine;
 using UnityEngine.Events;
-using Game_Manager;
+using AbstractPixel.GameManager;
 
 
-namespace Game_Manager.Events
+namespace AbstractPixel.GameManager.Events
 {
     /// <summary>
     /// This Class is used to bind Inspector related logic or vfx,sound and last minute stuff

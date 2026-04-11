@@ -1,5 +1,5 @@
-using Game_Manager;
-using Game_Manager.Events;
+using AbstractPixel.GameManager;
+using AbstractPixel.GameManager.Events;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;

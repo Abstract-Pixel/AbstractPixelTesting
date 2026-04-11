@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Game_Manager.Events;
-using Game_Manager.Configuration;
+using AbstractPixel.GameManager.Events;
+using AbstractPixel.GameManager.Configuration;
 
 
-namespace Game_Manager
+namespace AbstractPixel.GameManager
 {
     [System.Serializable]
     public abstract class GameBehaviorBase : IGameBehavior

@@ -1,9 +1,9 @@
-using Game_Manager;
-using Game_Manager.Conditions;
+using AbstractPixel.GameManager;
+using AbstractPixel.GameManager.Conditions;
 using UnityEngine;
-using Game_Manager.GameBehaviors;
+using AbstractPixel.GameManager.GameBehaviors;
 
-namespace Game_Manager.Configuration
+namespace AbstractPixel.GameManager.Configuration
 {
     [CreateAssetMenu(fileName = "LoseBehaviourConfigSO", menuName = "Game Manager/Behavior Configs/Lose Behavior Config", order = 6)]
     public class LoseBehaviorConfigSO : BaseGameBehaviorConfigSO
