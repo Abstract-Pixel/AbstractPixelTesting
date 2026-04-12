@@ -119,6 +119,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &672756377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672756379}
+  - component: {fileID: 672756378}
+  m_Layer: 0
+  m_Name: sceneTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &672756378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672756377}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f814f114fe5a56a4699b471238186c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::sceneTest
+  sceneField:
+    sceneName: PlayScene 1
+    sceneAsset: {fileID: 102900000, guid: 647b6c43413f3af4096c29d037ae62a4, type: 3}
+  sceneFields:
+  - sceneName: StartScene
+    sceneAsset: {fileID: 102900000, guid: 5d81b4ec0865b7645825c2226265ea07, type: 3}
+  - sceneName: 
+    sceneAsset: {fileID: 0}
+--- !u!4 &672756379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672756377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 660.8728, y: 0.00001, z: 2137.4714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892040478
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,15 +201,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerTesting
   sceneReference:
-    <SceneFieldReference>k__BackingField:
-      sceneName: PlayScene 2
-      sceneAsset: {fileID: 102900000, guid: 1a31a134037b68e4fb32b82bb9ad44cd, type: 3}
     <SceneAssetReference>k__BackingField:
       m_AssetGUID: 
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: PlayScene 2
+      sceneAsset: {fileID: 102900000, guid: 1a31a134037b68e4fb32b82bb9ad44cd, type: 3}
 --- !u!4 &892040480
 Transform:
   m_ObjectHideFlags: 0
@@ -734,3 +786,4 @@ SceneRoots:
   - {fileID: 1079290555}
   - {fileID: 892040480}
   - {fileID: 2005724566}
+  - {fileID: 672756379}

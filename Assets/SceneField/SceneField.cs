@@ -8,7 +8,7 @@ using UnityEditor;
 [Serializable]
 public class SceneField
 {
-    [ReadOnly, SerializeField] private string sceneName = string.Empty;
+    [SerializeField] private string sceneName = string.Empty;
 #if UNITY_EDITOR
     [SerializeField] private SceneAsset sceneAsset = null;
 #endif

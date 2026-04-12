@@ -5,10 +5,10 @@ using UnityEngine.AddressableAssets;
 [Serializable]
 public class SceneReference
 {
-    [Tooltip("Reference to the scene using the SceneField,Using Traditional Unity Scene Management")]
-    [field:SerializeField] public SceneField SceneFieldReference {  get; set; }
     [Tooltip("Reference to the scene using Addressables,Using Addressable Asset System")]
     [field:SerializeField] public AssetReference SceneAssetReference { get; set; }
+    [Tooltip("Reference to the scene using the SceneField,Using Traditional Unity Scene Management")]
+    [field:SerializeField] public SceneField SceneFieldReference {  get; set; }
 
     public string SceneName
     {

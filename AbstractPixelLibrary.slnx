@@ -10,4 +10,5 @@
   <Project Path="AbstractPixel.Core.Editor.csproj" />
   <Project Path="CustomInspector.Demo.csproj" />
   <Project Path="AbstractPixel.SaveSystem.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
