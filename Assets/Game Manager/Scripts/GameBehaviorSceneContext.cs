@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using AbstractPixel.Core;
 
 namespace AbstractPixel.GameManager
 {

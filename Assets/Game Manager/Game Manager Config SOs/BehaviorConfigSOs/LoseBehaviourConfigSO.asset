@@ -12,10 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc40f23cd56ea54f90b1ae9b2f1ed97, type: 3}
   m_Name: LoseBehaviourConfigSO
   m_EditorClassIdentifier: 
-  BehaviorType: 4
   IsTimeZeroOnExecution: 1
   IsCursorLockedOnExecution: 0
   IsCursorVisibleOnExecution: 1
   ShowGameUIOnExecution: 0
   SceneLoadTypeOnExecution: 0
-  SceneToLoad: 0
+  DefaultScene:
+    <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: GameOverScene
+      sceneAsset: {fileID: 102900000, guid: 19ba8b815e351234facebcf3c2b2c057, type: 3}
+  ValidScenes:
+  - <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: GameOverScene
+      sceneAsset: {fileID: 102900000, guid: 19ba8b815e351234facebcf3c2b2c057, type: 3}

@@ -1,3 +1,4 @@
+using AbstractPixel.Core;
 using UnityEngine;
 
 public interface IGameBehavior

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 971402071}
   - component: {fileID: 971402070}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: NextSceneSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,15 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerTesting
   sceneReference:
-    <SceneFieldReference>k__BackingField:
-      sceneName: PlayScene 1
-      sceneAsset: {fileID: 102900000, guid: 647b6c43413f3af4096c29d037ae62a4, type: 3}
     <SceneAssetReference>k__BackingField:
       m_AssetGUID: 
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: PlayScene 1
+      sceneAsset: {fileID: 102900000, guid: 647b6c43413f3af4096c29d037ae62a4, type: 3}
 --- !u!4 &971402071
 Transform:
   m_ObjectHideFlags: 0

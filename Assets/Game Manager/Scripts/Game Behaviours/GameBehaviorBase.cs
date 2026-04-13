@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using AbstractPixel.GameManager.Events;
 using AbstractPixel.GameManager.Configuration;
+using AbstractPixel.Core;
 
 
 namespace AbstractPixel.GameManager
@@ -129,6 +130,7 @@ namespace AbstractPixel.GameManager
             if (!behaviorConfigSO.IsSceneValid(sceneReference))
             {
                 LoadScene(behaviorConfigSO.DefaultScene.SceneName);
+                return;
             }
             switch (loadType)
             {

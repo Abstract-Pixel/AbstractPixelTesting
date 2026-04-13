@@ -12,10 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37604f490a072ce429052c9e300719a6, type: 3}
   m_Name: WinBehaviourConfigSO
   m_EditorClassIdentifier: 
-  BehaviorType: 3
   IsTimeZeroOnExecution: 1
   IsCursorLockedOnExecution: 0
   IsCursorVisibleOnExecution: 1
   ShowGameUIOnExecution: 0
   SceneLoadTypeOnExecution: 0
-  SceneToLoad: 0
+  DefaultScene:
+    <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: WinGameScene
+      sceneAsset: {fileID: 102900000, guid: 1eeb1c96ae3de274ab30850ffc4732de, type: 3}
+  ValidScenes:
+  - <SceneAssetReference>k__BackingField:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    <SceneFieldReference>k__BackingField:
+      sceneName: WinGameScene
+      sceneAsset: {fileID: 102900000, guid: 1eeb1c96ae3de274ab30850ffc4732de, type: 3}

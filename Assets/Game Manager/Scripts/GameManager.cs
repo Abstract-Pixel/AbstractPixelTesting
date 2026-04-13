@@ -6,6 +6,7 @@ using AbstractPixel.GameManager.Events;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using AbstractPixel.Core;
 
 
 namespace AbstractPixel.GameManager
@@ -65,7 +66,7 @@ namespace AbstractPixel.GameManager
             InitializeGameConditions();
             GameBehaviorBase initialBehavior = FindInitialBehavior();
             BehaviorSceneContext = new GameBehaviorSceneContext();
-            TransitionTo(initialBehavior);
+            TransitionTo(initialBehavior, ignoreSceneContext: true);
         }
 
         private void OnValidate()
@@ -168,11 +169,11 @@ namespace AbstractPixel.GameManager
         {
             if (CurrentBehavior is PlayBehavior)
             {
-                TransitionToType<PauseBehavior>();
+                TransitionToType<PauseBehavior>(ignoreSceneContext: true);
             }
             else if (CurrentBehavior is PauseBehavior)
             {
-                TransitionToType<PlayBehavior>();
+                TransitionToType<PlayBehavior>(ignoreSceneContext: true);
             }
         }
 
@@ -207,9 +208,9 @@ namespace AbstractPixel.GameManager
         void InitializationOnSceneLoaded(Scene scene, LoadSceneMode loadType)
         {
             InitializeGameConditions();
+            BehaviorSceneContext.ClearContext();
             if (pendingBehaviorToExecuteOnRestart != null)
             {
-                BehaviorSceneContext.ClearContext();
                 TransitionTo(pendingBehaviorToExecuteOnRestart);
                 pendingBehaviorToExecuteOnRestart = null;
             }
@@ -242,12 +243,12 @@ namespace AbstractPixel.GameManager
             return null;
         }
 
-        private void TransitionToType<T>(SceneReference sceneReference = null) where T : GameBehaviorBase
+        private void TransitionToType<T>(SceneReference sceneToLoad = null, bool ignoreSceneContext = false) where T : GameBehaviorBase
         {
-            TransitionTo(GetBehavior<T>(), sceneReference);
+            TransitionTo(GetBehavior<T>(), sceneToLoad, ignoreSceneContext);
         }
 
-        private void TransitionTo(GameBehaviorBase behavior, SceneReference sceneReference = null)
+        private void TransitionTo(GameBehaviorBase behavior, SceneReference sceneToLoad = null, bool ignoreSceneContext = false)
         {
             if (behavior == null)
             {
@@ -261,10 +262,10 @@ namespace AbstractPixel.GameManager
             }
             CurrentBehavior = behavior;
             SceneReference appropriateSceneReference = null;
-            if (CurrentBehavior.GetType() == BehaviorSceneContext.TargetBehaviorType)
+            if (!ignoreSceneContext && CurrentBehavior.GetType() == BehaviorSceneContext.TargetBehaviorType)
             {
                 appropriateSceneReference = BehaviorSceneContext.TargetSceneReference;
-            }  
+            }
             CurrentBehavior.Enter(appropriateSceneReference);
             GameManagerEventBus.Raise(GameStateEvent.OnStateChanged);
         }

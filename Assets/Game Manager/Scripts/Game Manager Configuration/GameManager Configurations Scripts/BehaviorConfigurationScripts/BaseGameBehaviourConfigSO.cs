@@ -1,3 +1,4 @@
+using AbstractPixel.Core;
 using AbstractPixel.GameManager;
 using AbstractPixel.GameManager.Conditions;
 using System.Collections.Generic;
@@ -61,7 +62,7 @@ namespace AbstractPixel.GameManager.Configuration
                     return true;
                 }
             }
-            //Debug.LogWarning($"Scene '{sceneName}' is not valid for behavior '{BehaviorName}'.");
+            Debug.LogWarning($"Scene '{sceneName}' is not valid for behavior '{BehaviorName}'.");
             return false;
 
         }
